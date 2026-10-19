@@ -1,0 +1,85 @@
+---
+import { localePath } from '../i18n';
+import { locales } from '../i18n/locales';
+import Icon from './Icon.astro';
+
+interface Props {
+  locale: string;
+  t: (key: string) => string;
+}
+const { locale, t } = Astro.props as Props;
+const home = localePath(locale);
+
+const navItems = [
+  { key: 'nav.home', href: home },
+  { key: 'nav.projects', href: `${home}#projects` },
+  { key: 'nav.path', href: `${home}#path` },
+  { key: 'nav.contact', href: `${home}#contact` },
+  { key: 'nav.cv', href: `${home}#cv` },
+];
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={home} aria-label={t('nav.home')}>
+      <span class="brand-mark" aria-hidden="true">
+        <Icon name="code" size={17} />
+      </span>
+      <span class="brand-name">{t('site.name')}</span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label={t('a11y.mainNav')} data-nav data-open="false">
+      <ul>
+        {navItems.map((item) => (
+          <li><a href={item.href}>{t(item.key)}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="header-tools">
+      <div class="lang-select-wrap">
+        <Icon name="globe" size={15} class="globe" />
+        <label class="sr-only" for="lang-select">{t('a11y.language')}</label>
+        <select
+          id="lang-select"
+          class="lang-select"
+          data-lang-select
+          data-current={locale}
+          title={t('a11y.language')}
+        >
+          {locales.map((l) => (
+            <option value={l.code} selected={l.code === locale} lang={l.tag}>
+              {l.nativeName}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <button
+        type="button"
+        class="icon-btn"
+        data-theme-toggle
+        aria-label={t('theme.label')}
+        title={t('theme.label')}
+        data-label={t('theme.label')}
+      >
+        <Icon name="sun" size={17} class="icon-sun" />
+        <Icon name="moon" size={17} class="icon-moon" />
+        <Icon name="auto" size={17} class="icon-auto" />
+      </button>
+
+      <button
+        type="button"
+        class="icon-btn menu-btn"
+        data-menu-toggle
+        aria-expanded="false"
+        aria-controls="main-nav"
+        aria-label={t('a11y.menu')}
+        data-label-open={t('a11y.menu')}
+        data-label-close={t('a11y.close')}
+      >
+        <Icon name="menu" size={18} class="icon-menu" />
+        <Icon name="close" size={18} class="icon-close" />
+      </button>
+    </div>
+  </div>
+</header>

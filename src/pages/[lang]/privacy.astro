@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getDictionary, localePath } from '../../i18n';
+import { locales } from '../../i18n/locales';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { lang: locale.code } }));
+}
+
+const { lang } = Astro.params;
+const locale = lang ?? 'pt';
+const dict = getDictionary(locale);
+const t = (key: string) => (dict as Record<string, string>)[key] ?? key;
+const home = localePath(locale);
+
+const sections = [
+  { title: 'privacy.form.title', body: 'privacy.form.body' },
+  { title: 'privacy.analytics.title', body: 'privacy.analytics.body' },
+  { title: 'privacy.storage.title', body: 'privacy.storage.body' },
+  { title: 'privacy.retention.title', body: 'privacy.retention.body' },
+  { title: 'privacy.rights.title', body: 'privacy.rights.body' },
+];
+---
+<BaseLayout
+  locale={locale}
+  path="privacy"
+  title={`${t('meta.privacy.title')} · ${t('site.name')}`}
+  description={t('meta.privacy.description')}
+>
+  <div class="container privacy-layout">
+    <aside class="privacy-aside">
+      <span class="mono">{t('privacy.updated')}</span>
+      <p>{t('privacy.intro')}</p>
+    </aside>
+
+    <div class="privacy-body">
+      <a class="breadcrumb privacy-back" href={home}><span aria-hidden="true">←</span> {t('privacy.back')}</a>
+      <h1>{t('meta.privacy.title')}</h1>
+      {sections.map((section) => (
+        <section class="privacy-block">
+          <h2>{t(section.title)}</h2>
+          <p>{t(section.body)}</p>
+        </section>
+      ))}
+      <p class="stack-note">{t('privacy.note')}</p>
+    </div>
+  </div>
+</BaseLayout>

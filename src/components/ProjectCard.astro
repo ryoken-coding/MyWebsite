@@ -1,0 +1,48 @@
+---
+import { projectPath } from '../i18n';
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+  index: number;
+  locale: string;
+  t: (key: string) => string;
+}
+const { project, index, locale, t } = Astro.props as Props;
+const statusKey =
+  project.status === 'inProgress'
+    ? 'status.inProgress'
+    : project.status === 'planning'
+      ? 'status.planning'
+      : project.status === 'pendingConfirmation'
+        ? 'status.pending'
+        : 'status.notSpecified';
+const statusClass =
+  project.status === 'inProgress'
+    ? 'status--progress'
+    : project.status === 'planning'
+      ? 'status--planning'
+      : project.status === 'pendingConfirmation'
+        ? 'status--pending'
+        : 'status--plain';
+---
+<article>
+  <a class="project-card" href={projectPath(locale, project.slug)}>
+    <div class="project-card-top">
+      <span class="project-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+      <span class={`status ${statusClass}`}>
+        <span class="sq" aria-hidden="true"></span>{t(statusKey)}
+      </span>
+    </div>
+    <h3>{t(project.titleKey)}</h3>
+    <p>{t(`${project.titleKey.replace('.title', '.summary')}`)}</p>
+    {project.tech.length > 0 && (
+      <ul class="chips" aria-label={t('project.tech')}>
+        {project.tech.map((tech) => <li class="chip">{tech}</li>)}
+      </ul>
+    )}
+    <div class="project-card-foot">
+      <span class="view-link">{t('projects.view')} <span aria-hidden="true">→</span></span>
+    </div>
+  </a>
+</article>

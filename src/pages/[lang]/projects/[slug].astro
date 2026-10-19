@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Icon from '../../../components/Icon.astro';
+import { getDictionary, localePath } from '../../../i18n';
+import { locales } from '../../../i18n/locales';
+import { projects } from '../../../data/projects';
+
+export function getStaticPaths() {
+  return locales.flatMap((locale) =>
+    projects.map((project) => ({ params: { lang: locale.code, slug: project.slug } }))
+  );
+}
+
+const { lang, slug } = Astro.params;
+const locale = lang ?? 'pt';
+const project = projects.find((p) => p.slug === slug)!;
+const dict = getDictionary(locale);
+const t = (key: string) => (dict as Record<string, string>)[key] ?? key;
+const base = project.titleKey.replace('.title', '');
+
+const features = [1, 2, 3, 4]
+  .map((n) => `${base}.feature${n}`)
+  .filter((key) => key in (dict as Record<string, string>))
+  .map((key) => t(key));
+
+const statusKey =
+  project.status === 'inProgress'
+    ? 'status.inProgress'
+    : project.status === 'planning'
+      ? 'status.planning'
+      : project.status === 'pendingConfirmation'
+        ? 'status.pending'
+        : 'status.notSpecified';
+const statusClass =
+  project.status === 'inProgress'
+    ? 'status--progress'
+    : project.status === 'planning'
+      ? 'status--planning'
+      : project.status === 'pendingConfirmation'
+        ? 'status--pending'
+        : 'status--plain';
+
+const home = localePath(locale);
+const title = `${t(project.titleKey)} · ${t('site.name')}`;
+const description = t(`${base}.summary`);
+---
+<BaseLayout locale={locale} path={`projects/${project.slug}`} title={title} description={description} pageType="article">
+  <header class="project-hero">
+    <div class="container">
+      <a class="breadcrumb" href={`${home}#projects`}>
+        <span aria-hidden="true">←</span> {t('project.back')}
+      </a>
+      <div class="project-hero-top">
+        <span class={`status ${statusClass}`}>
+          <span class="sq" aria-hidden="true"></span>{t(statusKey)}
+        </span>
+      </div>
+      <h1>{t(project.titleKey)}</h1>
+      <p class="lead">{description}</p>
+    </div>
+  </header>
+
+  <div class="container project-layout">
+    <div class="project-main">
+      <section aria-labelledby="context-title">
+        <h2 id="context-title">{t('project.context')}</h2>
+        <p>{t(`${base}.context`)}</p>
+      </section>
+
+      {features.length > 0 && (
+        <section aria-labelledby="features-title">
+          <h2 id="features-title">{t('project.features')}</h2>
+          <ul class="feature-list">
+            {features.map((feature) => <li>{feature}</li>)}
+          </ul>
+        </section>
+      )}
+
+      <section aria-labelledby="tech-title">
+        <h2 id="tech-title">{t('project.tech')}</h2>
+        {project.tech.length > 0 ? (
+          <ul class="chips">
+            {project.tech.map((tech) => <li class="chip">{tech}</li>)}
+          </ul>
+        ) : (
+          <span class="placeholder">{t('project.techPending')}</span>
+        )}
+      </section>
+
+      {project.images.length > 0 && (
+        <section aria-labelledby="media-title">
+          <h2 id="media-title">{t('project.images')}</h2>
+          <ul class="media-list">
+            {project.images.map((src, index) => (
+              <li>
+                <img
+                  src={src}
+                  alt={`${t(project.titleKey)} — ${t('project.images')} ${index + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <div class="project-cta">
+        <a class="btn btn--primary" href={`${home}#contact`}>
+          {t('hero.cta.contact')}<span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="btn btn--ghost" href={`${home}#projects`}>{t('nav.projects')}</a>
+      </div>
+    </div>
+
+    <aside class="project-side">
+      <section class="side-card" aria-labelledby="side-status">
+        <h2 id="side-status">{t('project.status')}</h2>
+        <div class="side-rows">
+          <div class="side-row">
+            <span class="status ${statusClass}">
+              <span class="sq" aria-hidden="true"></span>{t(statusKey)}
+            </span>
+          </div>
+        </div>
+        {project.status === 'pendingConfirmation' && (
+          <p class="pending-note">
+            <Icon name="alert" size={14} />
+            <span>{t('project.stateNote')}</span>
+          </p>
+        )}
+        {project.status === 'notSpecified' && (
+          <p class="pending-note">
+            <Icon name="info" size={14} />
+            <span>{t('project.notSpecifiedNote')}</span>
+          </p>
+        )}
+      </section>
+
+      <section class="side-card" aria-labelledby="side-links">
+        <h2 id="side-links">{t('project.links')}</h2>
+        <div class="side-rows">
+          <div class="side-row">
+            <span class="label">{t('project.repo')}</span>
+            {project.repo ? (
+              <span class="value"><a href={project.repo} target="_blank" rel="noopener noreferrer">{t('project.repo')}</a></span>
+            ) : (
+              <span class="value"><span class="placeholder">[LINK DO REPOSITÓRIO]</span></span>
+            )}
+          </div>
+          <div class="side-row">
+            <span class="label">{t('project.demo')}</span>
+            {project.demo ? (
+              <span class="value"><a href={project.demo} target="_blank" rel="noopener noreferrer">{t('project.demo')}</a></span>
+            ) : (
+              <span class="value"><span class="placeholder">[LINK DA DEMONSTRAÇÃO]</span></span>
+            )}
+          </div>
+          <div class="side-row">
+            <span class="label">{t('project.images')}</span>
+            {project.images.length > 0 ? (
+              <span class="value">{project.images.length}</span>
+            ) : (
+              <span class="value"><span class="placeholder">[IMAGENS OU CAPTURAS DOS PROJETOS]</span></span>
+            )}
+          </div>
+        </div>
+        <p class="pending-note">
+          <Icon name="info" size={14} />
+          <span>{t('project.pending')}: [LINK DO REPOSITÓRIO OU DEMONSTRAÇÃO DE CADA PROJETO]</span>
+        </p>
+      </section>
+    </aside>
+  </div>
+</BaseLayout>

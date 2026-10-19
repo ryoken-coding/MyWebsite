@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/check-i18n.mjs && node scripts/check-site.mjs",
+    "preview": "astro preview",
+    "check": "astro check",
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "check:site": "node scripts/check-site.mjs"
+  },
+  "dependencies": {
+    "astro": "^7.4.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.11",
+    "@types/node": "^26.6.5",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=20.3"
+  }
+}

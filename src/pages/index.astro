@@ -1,0 +1,50 @@
+---
+// Root entry: send visitors to their remembered language, defaulting to pt-PT.
+// Static fallback links keep this page usable without JavaScript.
+import { locales } from '../i18n/locales';
+import { siteUrl } from '../data/site';
+import '../styles/global.css';
+const target = '/pt/';
+---
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portefólio</title>
+    <meta name="description" content="Portefólio de programação web. Escolhe um idioma." />
+    <link rel="canonical" href={new URL(target, siteUrl).toString()} />
+    <meta name="robots" content="noindex, follow" />
+    {locales.map((l) => (
+      <link rel="alternate" hreflang={l.tag} href={`/${l.code}/`} />
+    ))}
+    <script is:inline>
+      (function () {
+        var fallback = 'pt';
+        var supported = ['pt','pt-br','en','es','fr','zh-cn','zh-tw','ru','uk','it','de','pl','hi','ko','ja','ar','bg','nl','sv','el','ro'];
+        var saved = null;
+        try { saved = localStorage.getItem('locale'); } catch (e) {}
+        var target = supported.indexOf(saved) > -1 ? saved : fallback;
+        window.location.replace('/' + target + '/');
+      })();
+    </script>
+    <noscript>
+      <style>
+        body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1.25rem; line-height: 1.6; }
+        li { margin-block: .3rem; }
+        a { color: #0f766e; }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <h1>Portefólio</h1>
+    <noscript>
+      <p>Escolhe um idioma / Choose a language:</p>
+      <ul>
+        {locales.map((l) => (
+          <li><a href={`/${l.code}/`} lang={l.tag} hreflang={l.tag}>{l.nativeName}</a></li>
+        ))}
+      </ul>
+    </noscript>
+  </body>
+</html>

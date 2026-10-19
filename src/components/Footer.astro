@@ -1,0 +1,76 @@
+---
+import { localePath } from '../i18n';
+import { locales } from '../i18n/locales';
+import { analytics } from '../data/site';
+import Icon from './Icon.astro';
+
+interface Props {
+  locale: string;
+  t: (key: string) => string;
+}
+const { locale, t } = Astro.props as Props;
+const home = localePath(locale);
+const privacy = localePath(locale, 'privacy');
+const year = new Date().getFullYear();
+const themeModes = [
+  { value: 'system', label: 'theme.system', icon: 'auto' },
+  { value: 'light', label: 'theme.light', icon: 'sun' },
+  { value: 'dark', label: 'theme.dark', icon: 'moon' },
+];
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href={home}>
+          <span class="brand-mark" aria-hidden="true"><Icon name="code" size={17} /></span>
+          <span class="brand-name">{t('site.name')}</span>
+        </a>
+        <p>{t('footer.note')}</p>
+      </div>
+
+      <div class="footer-col">
+        <h2>{t('footer.nav')}</h2>
+        <ul>
+          <li><a href={`${home}#projects`}>{t('nav.projects')}</a></li>
+          <li><a href={`${home}#path`}>{t('nav.path')}</a></li>
+          <li><a href={`${home}#contact`}>{t('nav.contact')}</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h2>{t('footer.language')}</h2>
+        <ul>
+          {locales.filter((l) => l.code === 'pt' || l.code === 'pt-br' || l.code === 'en' || l.code === 'ar').map((l) => (
+            <li><a href={`/${l.code}/`} lang={l.tag} hreflang={l.tag} dir={l.dir}>{l.nativeName}</a></li>
+          ))}
+          <li><button type="button" class="linklike" data-open-lang>{t('a11y.language')} (21)</button></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h2>{t('footer.legal')}</h2>
+        <ul>
+          <li><a href={privacy}>{t('footer.privacy')}</a></li>
+          {analytics.enabled && (
+            <li><button type="button" class="linklike" data-consent-settings>{t('consent.settings')}</button></li>
+          )}
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© {year}</span>
+      <fieldset class="theme-modes">
+        <legend class="sr-only">{t('theme.label')}</legend>
+        {themeModes.map((mode) => (
+          <label>
+            <input type="radio" name="theme-mode" value={mode.value} data-theme-radio />
+            <span><Icon name={mode.icon} size={13} />{t(mode.label)}</span>
+          </label>
+        ))}
+      </fieldset>
+      <span class="mono">Astro · Vercel</span>
+    </div>
+  </div>
+</footer>

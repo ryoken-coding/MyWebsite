@@ -1,0 +1,100 @@
+---
+import { contact, contactPlaceholders, formEndpoint } from '../data/site';
+import { localePath } from '../i18n';
+import Icon from './Icon.astro';
+
+interface Props {
+  locale: string;
+  t: (key: string) => string;
+}
+const { locale, t } = Astro.props as Props;
+const configured = Boolean(formEndpoint);
+const mailto = contact.email ? `mailto:${contact.email}` : '';
+---
+<div class="form-card" id="contact-form-card">
+  <h3>{t('contact.form')}</h3>
+  <p class="form-hint">{t('contact.formNote')}</p>
+
+  {!configured && (
+    <p class="pending-note" role="note">
+      <Icon name="alert" size={14} />
+      <span>{t('form.unconfigured')}{' '}
+        {mailto ? <a href={mailto}>{t('contact.email')}</a> : <span class="mono">{contactPlaceholders.email}</span>}
+      </span>
+    </p>
+  )}
+
+  <form
+    id="contact-form"
+    novalidate
+    data-contact-form
+    data-endpoint={formEndpoint}
+    data-msg-success={t('form.success')}
+    data-msg-error={t('form.error')}
+    data-msg-sending={t('form.sending')}
+    data-msg-unconfigured={t('form.unconfigured')}
+    data-msg-invalid-email={t('form.invalidEmail')}
+    data-msg-required={t('form.required')}
+  >
+    <div class="field">
+      <label for="cf-name">{t('form.name')}</label>
+      <input
+        id="cf-name"
+        name="name"
+        type="text"
+        autocomplete="name"
+        required
+        maxlength="100"
+        placeholder={t('form.namePh')}
+        aria-describedby="cf-name-error"
+      />
+      <span class="field-error" id="cf-name-error" data-error-for="name"></span>
+    </div>
+
+    <div class="field">
+      <label for="cf-email">{t('form.email')}</label>
+      <input
+        id="cf-email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        inputmode="email"
+        required
+        maxlength="160"
+        placeholder={t('form.emailPh')}
+        aria-describedby="cf-email-error"
+      />
+      <span class="field-error" id="cf-email-error" data-error-for="email"></span>
+    </div>
+
+    <div class="field">
+      <label for="cf-message">{t('form.message')}</label>
+      <textarea
+        id="cf-message"
+        name="message"
+        required
+        maxlength="2000"
+        rows="5"
+        placeholder={t('form.messagePh')}
+        aria-describedby="cf-message-error"
+      ></textarea>
+      <span class="field-error" id="cf-message-error" data-error-for="message"></span>
+    </div>
+
+    <!-- Honeypot: real people never fill this in. -->
+    <div class="hp" aria-hidden="true">
+      <label for="cf-company">Company</label>
+      <input id="cf-company" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <div class="form-foot">
+      <button type="submit" class="btn btn--primary" data-submit>{t('form.submit')}</button>
+      <a class="privacy-link" href={localePath(locale, 'privacy')}>{t('form.privacy')}</a>
+    </div>
+
+    <p class="form-status" role="status" aria-live="polite" tabindex="-1" data-form-status></p>
+    <noscript>
+      <p class="form-status">{t('form.noscript')}</p>
+    </noscript>
+  </form>
+</div>
