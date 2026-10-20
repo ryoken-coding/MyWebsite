@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getDictionary, localePath } from '../../i18n';
+import { createTranslator, localePath } from '../../i18n';
 import { locales } from '../../i18n/locales';
 
 export function getStaticPaths() {
@@ -8,9 +8,9 @@ export function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
-const locale = lang ?? 'pt';
-const dict = getDictionary(locale);
-const t = (key: string) => (dict as Record<string, string>)[key] ?? key;
+if (!lang) throw new Error('Missing locale route parameter');
+const locale = lang;
+const t = createTranslator(locale);
 const home = localePath(locale);
 
 const sections = [

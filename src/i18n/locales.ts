@@ -37,6 +37,9 @@ export const locales: LocaleMeta[] = [
 ];
 
 export const localeCodes = locales.map((l) => l.code);
-export const getLocaleMeta = (code: string): LocaleMeta =>
-  locales.find((l) => l.code === code) ?? locales[0];
+export const getLocaleMeta = (code: string): LocaleMeta => {
+  const locale = locales.find((item) => item.code === code);
+  if (!locale) throw new RangeError(`Unsupported locale: ${code}`);
+  return locale;
+};
 export const isValidLocale = (code: string) => localeCodes.includes(code);

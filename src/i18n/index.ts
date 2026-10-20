@@ -49,12 +49,34 @@ const dictionaries: Record<string, Dictionary> = {
   ro,
 };
 
-export const getDictionary = (locale: string): Dictionary => dictionaries[locale] ?? ptPT;
+/** Return only a known locale; invalid codes must never fall back silently. */
+export const getDictionary = (locale: string): Dictionary => {
+  if (!Object.prototype.hasOwnProperty.call(dictionaries, locale)) {
+    throw new RangeError(`Unsupported locale: ${locale}`);
+  }
+  const dictionary = dictionaries[locale];
+  return dictionary;
+};
+
+/** Strict lookup for templates, including computed project keys. */
+export const createTranslator = (locale: string) => {
+  const dictionary = getDictionary(locale);
+  return (key: string): string => {
+    const value = dictionary[key as LocaleKey];
+    if (typeof value !== 'string' || !value.trim()) {
+      throw new Error(`Missing translation for locale "${locale}", key "${key}"`);
+    }
+    return value;
+  };
+};
 
 /** Path helper that keeps the same route across languages. */
 export const localePath = (locale: string, path = ''): string => {
+  if (!Object.prototype.hasOwnProperty.call(dictionaries, locale)) {
+    throw new RangeError(`Unsupported locale: ${locale}`);
+  }
   const clean = path.replace(/^\/+|\/+$/g, '');
   return clean ? `/${locale}/${clean}/` : `/${locale}/`;
 };
 
-export const projectPath = (locale: string, slug: string) => `/${locale}/projects/${slug}/`;
+export const projectPath = (locale: string, slug: string) => localePath(locale, `projects/${slug}`);

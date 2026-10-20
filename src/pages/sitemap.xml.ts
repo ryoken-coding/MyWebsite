@@ -3,13 +3,14 @@ import { locales } from '../i18n/locales';
 import { projects } from '../data/projects';
 import { siteUrl } from '../data/site';
 
-/** Every page exists in every language, so the sitemap lists all of them. */
+/** Every public page is listed once a real public origin has been configured. */
 export const GET: APIRoute = () => {
-  const base = siteUrl.replace(/\/$/, '');
-  const routes = ['', 'privacy', ...projects.map((p) => `projects/${p.slug}`)];
-  const urls = locales.flatMap((locale) =>
-    routes.map((route) => `${base}/${locale.code}/${route ? route + '/' : ''}`)
-  );
+  const routes = ['', 'privacy', ...projects.map((project) => `projects/${project.slug}`)];
+  const urls = siteUrl
+    ? locales.flatMap((locale) =>
+        routes.map((route) => `${siteUrl}/${locale.code}/${route ? `${route}/` : ''}`)
+      )
+    : [];
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

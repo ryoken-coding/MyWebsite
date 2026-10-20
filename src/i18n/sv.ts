@@ -7,7 +7,7 @@ const sv = {
 
   'meta.home.title': 'Frilansande webbutvecklare — webbplatser, gränssnitt och webbshoppar',
   'meta.home.description':
-    'Student i management och programmering av informationssystem, praktikant på Inova Digital. Jag bygger webbplatser, gränssnitt och webbshoppar för kunder på distans.',
+    'Student i administration och programmering av informationssystem, praktikant på Inova Digital. Jag bygger webbplatser, gränssnitt och webbshoppar för kunder på distans.',
   'meta.privacy.title': 'Integritet',
   'meta.privacy.description':
     'Vilka uppgifter webbplatsen samlar in, varför, hur länge och hur du kan styra dem.',
@@ -20,10 +20,10 @@ const sv = {
 
   'a11y.skip': 'Hoppa till innehållet',
   'a11y.mainNav': 'Huvudnavigering',
-  'a11y.footerNav': 'Navigering i sidfoten',
-  'a11y.language': 'Språk',
-  'a11y.theme': 'Tema',
   'a11y.menu': 'Meny',
+  'a11y.language': 'Språk',
+
+
   'a11y.close': 'Stäng',
   'a11y.external': 'öppnas i ett nytt fönster',
 
@@ -35,12 +35,12 @@ const sv = {
   'hero.badge': 'Tillgänglig för projekt på distans',
   'hero.title': 'Webbplatser, gränssnitt och webbshoppar byggda med känsla för detaljer.',
   'hero.lead':
-    'Jag studerar management och programmering av informationssystem och gör praktik på Inova Digital. Under ungefär ett år av praktik — studier, egna projekt och praktik — har jag byggt en blogg, en hårdvarubutik och två RPG. Jag arbetar endast på distans.',
+    'Jag studerar administration och programmering av informationssystem och gör praktik på Inova Digital. Under ungefär ett år av praktik — studier, egna projekt och praktik — har jag byggt en blogg, en hårdvarubutik och två RPG. Jag arbetar endast på distans.',
   'hero.cta.projects': 'Se projekten',
   'hero.cta.contact': 'Diskutera ett webbprojekt',
   'hero.panel.title': 'I korthet',
   'hero.panel.study': 'Studier',
-  'hero.panel.course': 'Management och programmering av informationssystem',
+  'hero.panel.course': 'Administration och programmering av informationssystem',
   'hero.panel.intern': 'I praktiken',
   'hero.panel.internship': 'Praktik på Inova Digital',
   'hero.panel.practice': 'Praktik',
@@ -52,8 +52,8 @@ const sv = {
   'stack.lead':
     'Det jag bygger och experimenterar med, grupperat per område. Varje projekt tar det det behöver, därför är listan medvetet bred.',
   'stack.areas': 'Arbetsområden',
-  'area.frontend': 'Frontend',
-  'area.backend': 'Backend',
+  'area.frontend': 'Gränssnitt',
+  'area.backend': 'Serversida',
   'area.databases': 'Databaser',
   'area.security': 'Säkerhet',
   'area.games': 'Spelutveckling',
@@ -64,29 +64,18 @@ const sv = {
 
   'projects.title': 'Projekt',
   'projects.lead':
-    'Fyra arbeten som visar hur jag tänker och vad jag kan leverera. Varje har en sida med kontext, bekräftade funktioner och aktuell status.',
+    'Fyra arbeten som visar hur jag tänker och vad jag kan skapa. Varje arbete har en sida med sammanhang och bekräftade funktioner.',
   'projects.view': 'Visa projekt',
-  'projects.individual': 'Individuellt projekt',
 
-  'status.inProgress': 'Under utveckling',
-  'status.planning': 'Under planering',
-  'status.pending': 'Status att bekräfta',
-  'status.notSpecified': 'Status anges inte',
 
-  'project.back': 'Tillbaka till projekten',
-  'project.summary': 'Sammanfattning',
-  'project.context': 'Kontext',
   'project.features': 'Bekräftade funktioner',
+  'project.context': 'Kontext',
+  'project.back': 'Tillbaka till projekten',
   'project.tech': 'Tekniker',
-  'project.status': 'Aktuell status',
   'project.repo': 'Kodförråd',
   'project.demo': 'Demo',
   'project.images': 'Bilder',
-  'project.links': 'Länkar och bilder',
-  'project.pending': 'Att lägga till',
-  'project.techPending': 'Tekniker att bekräfta',
-  'project.stateNote': 'Statusen för det här projektet är ännu inte bekräftad. Den uppdateras före publicering.',
-  'project.notSpecifiedNote': 'Det här projektet har ingen angiven status än.',
+  'project.links': 'Projektlänkar',
 
   'project.blog.title': 'Blogg med PHP och SQL',
   'project.blog.summary': 'En blogg där varje författare bara hanterar sina egna artiklar.',
@@ -101,25 +90,26 @@ const sv = {
   'project.shop.feature2': 'Orderuppföljning',
   'project.shop.feature3': 'Valuta och betalsätt anpassade efter användarens land',
 
-  'project.unity.title': '2D top-down-RPG i Unity',
+  'project.unity.title': '2D-rollspel med vy uppifrån i Unity',
   'project.unity.summary':
-    'Magicentrerat 2D top-down-RPG med utvecklad lore och ett sammanhängande magisystem.',
-  'project.unity.context': 'Ett spel under utveckling. Magi står i centrum: magisystemet är komplext och utformat för att förbli konsekvent med lore.',
+    'Magifokuserat 2D-rollspel med en genomarbetad spelvärld och ett sammanhängande magisystem.',
+  'project.unity.context':
+    'Magi står i centrum för spelet: det komplexa magisystemet är utformat för att passa in i spelvärlden.',
   'project.unity.feature1': 'Komplext och sammanhängande magisystem',
-  'project.unity.feature2': 'Utvecklad lore',
-  'project.unity.feature3': '2D-perspektiv uppifrån',
+  'project.unity.feature2': 'Genomarbetad spelvärld',
+  'project.unity.feature3': 'Vy uppifrån i 2D',
 
   'project.cpp.title': '2D-RPG i ren C++',
-  'project.cpp.summary': 'Ett 2D-RPG skrivet i C++, med planerat stöd för Windows, Linux och macOS.',
-  'project.cpp.context': 'Ett individuellt projekt under utveckling, skrivet i ren C++. Arbetet använder stödbibliotek och verktyg, och döljer inte det.',
+  'project.cpp.summary': 'Ett 2D-rollspel skrivet i C++.',
+  'project.cpp.context':
+    'Ett individuellt projekt skrivet i ren C++. Stödbibliotek och verktyg används, vilket anges öppet.',
   'project.cpp.feature1': '2D-RPG i ren C++',
-  'project.cpp.feature2': 'Planerat stöd för Windows, Linux och macOS',
 
   'path.title': 'Bakgrund',
   'path.lead': 'Studier och praktik vid sidan av egna projekt.',
-  'path.edu.title': 'Management och programmering av informationssystem',
+  'path.edu.title': 'Administration och programmering av informationssystem',
   'path.edu.body':
-    'En utbildning som kombinerar management, programmering och system. Det är grunden jag använder i projekten jag bygger.',
+    'En utbildning som kombinerar administration, programmering och system. Det är grunden jag använder i projekten jag bygger.',
   'path.intern.title': 'Praktik på Inova Digital',
   'path.intern.body': 'Praktik på Inova Digital. Det är den del av praktiken som sker utanför egna projekt.',
   'path.practice.title': 'Ungefär ett år av praktik',
@@ -129,15 +119,13 @@ const sv = {
   'cv.title': 'CV',
   'cv.lead': 'CV som pdf att ladda ner.',
   'cv.button': 'Ladda ner pdf',
-  'cv.pending': 'Filen har inte lagts till än:',
 
   'contact.title': 'Kontakt',
   'contact.lead':
     'För att prata om ett webbprojekt — eller se om det är rimligt att arbeta tillsammans.',
   'contact.direct': 'Direkt',
-  'contact.directNote':
-    'Jag svarar via e-post eller WhatsApp. På GitHub finns den kod som är offentlig.',
-  'contact.form': 'Formulär',
+  'contact.form': 'Kontaktformulär',
+
   'contact.formNote': 'Namn, e-post och meddelande. Inget mer.',
   'contact.email': 'E-post',
   'contact.github': 'GitHub',
@@ -147,25 +135,22 @@ const sv = {
   'form.email': 'E-post',
   'form.message': 'Meddelande',
   'form.namePh': 'Ditt namn',
-  'form.emailPh': 'namn@exempel.se',
   'form.messagePh': 'Vad du behöver, när, och vad som redan finns.',
   'form.submit': 'Skicka meddelande',
   'form.sending': 'Skickar…',
   'form.success': 'Meddelandet är skickat. Jag svarar så snart jag kan.',
-  'form.error': 'Det gick inte att skicka. Försök igen eller använd den direkta e-posten.',
+  'form.error': 'Meddelandet kunde inte skickas. Försök igen senare.',
   'form.required': 'Fyll i det här fältet.',
   'form.invalidEmail': 'Ange en giltig e-postadress.',
-  'form.unconfigured':
-    'Formuläret är inte kopplat än. Använd den direkta e-posten tills det är aktiverat.',
-  'form.noscript': 'Formuläret kräver JavaScript. Utan det, använd den direkta e-posten.',
+  'form.noscript': 'Aktivera JavaScript för att skicka formuläret.',
   'form.privacy': 'Integritetspolicy',
 
   'footer.nav': 'Navigering',
   'footer.legal': 'Juridik',
   'footer.privacy': 'Integritet',
   'footer.language': 'Språk',
-  'footer.theme': 'Tema',
   'footer.note': 'Tillgänglig för webbprojekt på distans.',
+
 
   'theme.label': 'Tema',
   'theme.system': 'System',
@@ -174,31 +159,30 @@ const sv = {
 
   'consent.title': 'Analys utan cookies',
   'consent.body':
-    'Jag använder Vercel Web Analytics för att se vilka sidor som besöks, utan cookies och utan att identifiera någon. Skriptet laddas bara om du godkänner.',
+    'Med ditt samtycke visar besöksstatistiken vilka sidor som visas. Skriptet laddas först efter att du har godkänt.',
   'consent.accept': 'Godkänn analys',
   'consent.reject': 'Avböj',
   'consent.settings': 'Inställningar för analys',
 
-  'privacy.updated': 'Senast uppdaterad: [DATUM FÖR UPPDATERING]',
+  'privacy.updated': 'Aktuella inställningar',
   'privacy.intro':
-    'Den här sidan förklarar vilka uppgifter webbplatsen samlar in, vad de används till, hur länge de sparas och hur du kan utöva dina rättigheter. Fält inom hakparenteser behöver fortfarande fyllas i.',
+    'Den här sidan sammanfattar de integritetsfunktioner som är aktiva på webbplatsen just nu.',
   'privacy.form.title': 'Kontaktformulär',
   'privacy.form.body':
-    'Formuläret frågar bara efter namn, e-post och meddelande. Uppgifterna skickas via [FORMULÄRLEVERANTÖR] till [KONTAKT-E-POST] och används enbart för att svara på ditt meddelande. Rättslig grund är din kontaktförfrågan; lagringstiden är [LAGRINGSTID].',
+    'Kontaktformuläret är inte tillgängligt just nu och visas inte. Webbplatsen skickar eller samlar inte in meddelanden via formuläret.',
   'privacy.analytics.title': 'Analys',
   'privacy.analytics.body':
-    'Med ditt samtycke använder jag [LEVERANTÖR OCH KONFIGURATION AV ANALYS] för att räkna besök och förstå vilka sidor som är användbara, utan cookies och utan att identifiera besökare. Skriptet laddas först efter ditt godkännande; avböjer du mäts ingenting.',
-  'privacy.storage.title': 'Externa tjänster och lokal lagring',
+    'Besöksstatistik är avstängd. Webbplatsen laddar inga analysskript och skickar inga användningshändelser.',
+  'privacy.storage.title': 'Webbläsarinställningar',
   'privacy.storage.body':
-    'Webbplatsen driftas av [HOSTING / LEVERANTÖR]. Dina språk- och temainställningar sparas bara i din webbläsare (localStorage), liksom ditt val om analys. Jag använder inga reklamcookies eller spårare från tredje part.',
-  'privacy.retention.title': 'Lagring',
+    'Dina språk- och temainställningar sparas i webbläsaren så att de finns kvar vid nästa besök. Du kan radera dem i webbläsarens inställningar.',
+  'privacy.retention.title': 'Sparade inställningar',
   'privacy.retention.body':
-    'Mottagna meddelanden sparas i [LAGRINGSTID] och raderas sedan. Du kan begära radering tidigare.',
-  'privacy.rights.title': 'Rättigheter och kontakt',
+    'Webbplatsen sparar bara språk- och temainställningar i den här webbläsaren. Kontaktmeddelanden eller analysdata sparas inte.',
+  'privacy.rights.title': 'Dina val',
   'privacy.rights.body':
-    'Du kan begära tillgång till, rättelse eller radering av dina uppgifter, eller återkalla samtycket till analys när som helst, genom att skriva till [KONTAKT-E-POST]. Personuppgiftsansvarig är [NAMN PÅ ANSVARIG].',
-  'privacy.note':
-    'Den här texten beskriver webbplatsens faktiska konfiguration. Om formuläret eller analysen ändras måste sidan uppdateras.',
+    'Du kan när som helst ta bort inställningarna genom att radera webbplatsens data i webbläsarens inställningar. Webbplatsen skickar eller sparar inga meddelanden.',
+  'privacy.note': 'Webbplatsen använder inga annonscookies eller annonsspårare från tredje part.',
   'privacy.back': 'Tillbaka till start',
 
   'notFound.title': 'Sidan hittades inte',

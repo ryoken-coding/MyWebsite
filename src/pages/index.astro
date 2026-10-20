@@ -1,23 +1,29 @@
 ---
 // Root entry: send visitors to their remembered language, defaulting to pt-PT.
-// Static fallback links keep this page usable without JavaScript.
+// With JavaScript disabled, the native-language links remain usable.
 import { locales } from '../i18n/locales';
+import { getDictionary } from '../i18n';
 import { siteUrl } from '../data/site';
 import '../styles/global.css';
+
 const target = '/pt/';
+const defaultCopy = getDictionary('pt');
 ---
 <!doctype html>
-<html lang="pt-PT">
+<html lang="pt-PT" dir="ltr" data-locale="pt">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portefólio</title>
-    <meta name="description" content="Portefólio de programação web. Escolhe um idioma." />
-    <link rel="canonical" href={new URL(target, siteUrl).toString()} />
-    <meta name="robots" content="noindex, follow" />
-    {locales.map((l) => (
-      <link rel="alternate" hreflang={l.tag} href={`/${l.code}/`} />
+    <title>{defaultCopy['site.name']}</title>
+    <meta name="description" content={defaultCopy['meta.home.description']} />
+    {siteUrl && <link rel="canonical" href={new URL(target, siteUrl).toString()} />}
+    {siteUrl && <meta property="og:url" content={new URL(target, siteUrl).toString()} />}
+    {siteUrl && locales.map((locale) => (
+      <link rel="alternate" hreflang={locale.tag} href={new URL(`/${locale.code}/`, siteUrl).toString()} />
     ))}
+    {siteUrl && <link rel="alternate" hreflang="x-default" href={new URL(target, siteUrl).toString()} />}
+    {siteUrl && <link rel="sitemap" href="/sitemap.xml" />}
+    <meta name="robots" content="noindex, follow" />
     <script is:inline>
       (function () {
         var fallback = 'pt';
@@ -31,20 +37,22 @@ const target = '/pt/';
     <noscript>
       <style>
         body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1.25rem; line-height: 1.6; }
-        li { margin-block: .3rem; }
+        ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: .5rem; }
         a { color: #0f766e; }
       </style>
     </noscript>
   </head>
   <body>
-    <h1>Portefólio</h1>
     <noscript>
-      <p>Escolhe um idioma / Choose a language:</p>
-      <ul>
-        {locales.map((l) => (
-          <li><a href={`/${l.code}/`} lang={l.tag} hreflang={l.tag}>{l.nativeName}</a></li>
-        ))}
-      </ul>
+      <h1>{defaultCopy['site.name']}</h1>
+      <p>{defaultCopy['a11y.language']}</p>
+      <nav aria-label={defaultCopy['a11y.language']}>
+        <ul>
+          {locales.map((locale) => (
+            <li><a href={`/${locale.code}/`} lang={locale.tag} hreflang={locale.tag} dir={locale.dir}>{locale.nativeName}</a></li>
+          ))}
+        </ul>
+      </nav>
     </noscript>
   </body>
 </html>

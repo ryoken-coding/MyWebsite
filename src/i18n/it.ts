@@ -20,10 +20,10 @@ const it = {
 
   'a11y.skip': 'Vai al contenuto',
   'a11y.mainNav': 'Navigazione principale',
-  'a11y.footerNav': 'Navigazione del piè di pagina',
-  'a11y.language': 'Lingua',
-  'a11y.theme': 'Tema',
   'a11y.menu': 'Menu',
+  'a11y.language': 'Lingua',
+
+
   'a11y.close': 'Chiudi',
   'a11y.external': 'si apre in una nuova finestra',
 
@@ -52,8 +52,8 @@ const it = {
   'stack.lead':
     'Ciò che uso per costruire e sperimentare, raggruppato per area. Ogni progetto prende ciò che gli serve, per questo l’elenco è ampio di proposito.',
   'stack.areas': 'Aree di lavoro',
-  'area.frontend': 'Frontend',
-  'area.backend': 'Backend',
+  'area.frontend': 'Interfaccia',
+  'area.backend': 'Lato server',
   'area.databases': 'Database',
   'area.security': 'Sicurezza',
   'area.games': 'Sviluppo di giochi',
@@ -64,29 +64,18 @@ const it = {
 
   'projects.title': 'Progetti',
   'projects.lead':
-    'Quattro lavori che mostrano come ragiono e cosa posso consegnare. Ognuno ha una pagina con contesto, funzionalità confermate e stato attuale.',
+    'Quattro lavori che mostrano come ragiono e cosa so realizzare. Ognuno ha una pagina con il contesto e le funzionalità confermate.',
   'projects.view': 'Vedi il progetto',
-  'projects.individual': 'Progetto individuale',
 
-  'status.inProgress': 'In sviluppo',
-  'status.planning': 'In pianificazione',
-  'status.pending': 'Stato da confermare',
-  'status.notSpecified': 'Stato non indicato',
 
-  'project.back': 'Torna ai progetti',
-  'project.summary': 'Sintesi',
-  'project.context': 'Contesto',
   'project.features': 'Funzionalità confermate',
+  'project.context': 'Contesto',
+  'project.back': 'Torna ai progetti',
   'project.tech': 'Tecnologie',
-  'project.status': 'Stato attuale',
   'project.repo': 'Repository',
   'project.demo': 'Demo',
   'project.images': 'Immagini',
-  'project.links': 'Link e immagini',
-  'project.pending': 'Da aggiungere',
-  'project.techPending': 'Tecnologie da confermare',
-  'project.stateNote': 'Lo stato di questo progetto non è ancora stato confermato. Sarà aggiornato prima della pubblicazione.',
-  'project.notSpecifiedNote': 'Questo progetto non ha ancora uno stato indicato.',
+  'project.links': 'Collegamenti del progetto',
 
   'project.blog.title': 'Blog con PHP e SQL',
   'project.blog.summary': 'Un blog in cui ogni autore gestisce solo i propri articoli.',
@@ -101,19 +90,20 @@ const it = {
   'project.shop.feature2': 'Tracciamento degli ordini',
   'project.shop.feature3': 'Valuta e metodi di pagamento adattati al paese dell’utente',
 
-  'project.unity.title': 'RPG 2D top-down in Unity',
+  'project.unity.title': 'RPG 2D con visuale dall’alto in Unity',
   'project.unity.summary':
-    'RPG 2D top-down incentrato sulla magia, con una lore sviluppata e un sistema magico coerente.',
-  'project.unity.context': 'Gioco in sviluppo. La magia è al centro: il sistema magico è complesso ed è pensato per restare coerente con la lore.',
+    'RPG 2D incentrato sulla magia, con un mondo ben sviluppato e un sistema magico coerente.',
+  'project.unity.context':
+    'La magia è al centro del gioco: il sistema magico è complesso e pensato per restare coerente con il mondo di gioco.',
   'project.unity.feature1': 'Sistema magico complesso e coerente',
-  'project.unity.feature2': 'Lore sviluppata',
-  'project.unity.feature3': 'Vista top-down in 2D',
+  'project.unity.feature2': 'Mondo ben sviluppato',
+  'project.unity.feature3': 'Visuale dall’alto in 2D',
 
   'project.cpp.title': 'RPG 2D in C++ puro',
-  'project.cpp.summary': 'RPG 2D scritto in C++, con supporto previsto per Windows, Linux e macOS.',
-  'project.cpp.context': 'Progetto individuale in sviluppo, scritto in C++ puro. Il lavoro usa librerie e strumenti di supporto, senza nasconderlo.',
+  'project.cpp.summary': 'RPG 2D scritta in C++.',
+  'project.cpp.context':
+    'Progetto individuale scritto in C++ puro. Usa librerie e strumenti di supporto, come indicato con trasparenza.',
   'project.cpp.feature1': 'RPG 2D in C++ puro',
-  'project.cpp.feature2': 'Supporto previsto per Windows, Linux e macOS',
 
   'path.title': 'Percorso',
   'path.lead': 'Formazione e tirocinio accanto ai progetti personali.',
@@ -129,42 +119,38 @@ const it = {
   'cv.title': 'Curriculum',
   'cv.lead': 'Curriculum in PDF da scaricare.',
   'cv.button': 'Scarica il PDF',
-  'cv.pending': 'Il file non è ancora stato aggiunto:',
 
   'contact.title': 'Contatti',
   'contact.lead':
     'Per parlare di un progetto web — o per capire se ha senso lavorare insieme.',
   'contact.direct': 'Diretto',
-  'contact.directNote': 'Rispondo via email o WhatsApp. Su GitHub c’è il codice pubblico.',
-  'contact.form': 'Modulo',
-  'contact.formNote': 'Nome, email e messaggio. Nient’altro.',
-  'contact.email': 'Email',
+  'contact.form': 'Modulo di contatto',
+
+  'contact.formNote': 'Nome, e-mail e messaggio. Nient’altro.',
+  'contact.email': 'E-mail',
   'contact.github': 'GitHub',
   'contact.whatsapp': 'WhatsApp',
 
   'form.name': 'Nome',
-  'form.email': 'Email',
+  'form.email': 'E-mail',
   'form.message': 'Messaggio',
   'form.namePh': 'Il tuo nome',
-  'form.emailPh': 'nome@esempio.com',
   'form.messagePh': 'Cosa ti serve, per quando e cosa esiste già.',
   'form.submit': 'Invia messaggio',
   'form.sending': 'Invio…',
   'form.success': 'Messaggio inviato. Risponderò appena possibile.',
-  'form.error': 'Invio non riuscito. Riprova o usa l’email diretta.',
+  'form.error': 'Non è stato possibile inviare il messaggio. Riprova più tardi.',
   'form.required': 'Compila questo campo.',
-  'form.invalidEmail': 'Indica un’email valida.',
-  'form.unconfigured':
-    'L’invio del modulo non è ancora configurato. Usa l’email diretta finché non sarà collegato.',
-  'form.noscript': 'Il modulo richiede JavaScript. Senza, usa l’email diretta.',
+  'form.invalidEmail': 'Inserisci un indirizzo e-mail valido.',
+  'form.noscript': 'Attiva JavaScript per inviare questo modulo.',
   'form.privacy': 'Informativa privacy',
 
   'footer.nav': 'Navigazione',
   'footer.legal': 'Note legali',
   'footer.privacy': 'Privacy',
   'footer.language': 'Lingua',
-  'footer.theme': 'Tema',
   'footer.note': 'Disponibile per progetti web a distanza.',
+
 
   'theme.label': 'Tema',
   'theme.system': 'Sistema',
@@ -173,31 +159,31 @@ const it = {
 
   'consent.title': 'Analytics senza cookie',
   'consent.body':
-    'Uso Vercel Web Analytics per sapere quali pagine vengono visitate, senza cookie e senza identificare le persone. Lo script viene caricato solo se accetti.',
+    'Con il tuo consenso, le statistiche aiutano a capire quali pagine vengono visitate. Lo script viene caricato solo dopo l’accettazione.',
   'consent.accept': 'Accetta analytics',
   'consent.reject': 'Rifiuta',
   'consent.settings': 'Preferenze analytics',
 
-  'privacy.updated': 'Ultimo aggiornamento: [DATA DI AGGIORNAMENTO]',
+  'privacy.updated': 'Impostazioni attuali',
   'privacy.intro':
-    'Questa pagina spiega quali dati raccoglie il sito, a cosa servono, per quanto tempo vengono conservati e come puoi esercitare i tuoi diritti. I campi tra parentesi quadre sono dati ancora da completare.',
+    'Questa pagina riassume le funzioni di tutela della privacy attualmente attive su questo sito.',
   'privacy.form.title': 'Modulo di contatto',
   'privacy.form.body':
-    'Il modulo chiede solo nome, email e messaggio. I dati vengono inviati tramite [FORNITORE DEL MODULO] a [EMAIL DI CONTATTO] e servono esclusivamente a rispondere al contatto. La base giuridica è la tua richiesta; la conservazione è prevista per [PERIODO DI CONSERVAZIONE].',
+    'Il modulo di contatto non è disponibile e non viene mostrato. Questo sito non invia né raccoglie messaggi tramite il modulo.',
   'privacy.analytics.title': 'Analytics',
   'privacy.analytics.body':
-    'Con il tuo consenso uso [FORNITORE E CONFIGURAZIONE DI ANALYTICS] per contare le visite e capire quali pagine sono utili, senza cookie e senza identificare i visitatori. Lo script viene caricato solo dopo l’accettazione; se rifiuti, non viene misurato nulla.',
-  'privacy.storage.title': 'Servizi esterni e archiviazione locale',
+    'Le statistiche sulle visite sono disattivate. Questo sito non carica script di analisi e non invia eventi di utilizzo.',
+  'privacy.storage.title': 'Preferenze del browser',
   'privacy.storage.body':
-    'Il sito è ospitato da [HOSTING / FORNITORE]. Le preferenze di lingua e tema sono salvate solo nel tuo browser (localStorage), così come la scelta sugli analytics. Non uso cookie pubblicitari né tracker di terze parti.',
-  'privacy.retention.title': 'Conservazione',
+    'Le preferenze di lingua e tema vengono salvate nel browser per essere mantenute tra una visita e l’altra. Puoi eliminarle dalle impostazioni del browser.',
+  'privacy.retention.title': 'Preferenze salvate',
   'privacy.retention.body':
-    'I messaggi ricevuti vengono conservati per [PERIODO DI CONSERVAZIONE] e poi eliminati. Puoi chiederne la cancellazione prima di quel termine.',
-  'privacy.rights.title': 'Diritti e contatti',
+    'Questo sito salva nel browser solo le preferenze di lingua e tema. Non conserva messaggi di contatto né dati di analisi delle visite.',
+  'privacy.rights.title': 'Le tue scelte',
   'privacy.rights.body':
-    'Puoi chiedere accesso, rettifica o cancellazione dei tuoi dati, o revocare il consenso agli analytics in qualsiasi momento, scrivendo a [EMAIL DI CONTATTO]. Il titolare del trattamento è [NOME DEL TITOLARE].',
+    'Puoi rimuovere queste preferenze in qualsiasi momento cancellando i dati di questo sito dalle impostazioni del browser. Il sito non invia né conserva messaggi.',
   'privacy.note':
-    'Questo testo descrive la configurazione reale del sito. Se il modulo o gli analytics cambiano, questa pagina deve essere aggiornata.',
+    'Questo sito non usa cookie pubblicitari né strumenti di tracciamento pubblicitario di terze parti.',
   'privacy.back': 'Torna alla home',
 
   'notFound.title': 'Pagina non trovata',

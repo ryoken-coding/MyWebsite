@@ -20,10 +20,10 @@ const ro = {
 
   'a11y.skip': 'Sari la conținut',
   'a11y.mainNav': 'Navigare principală',
-  'a11y.footerNav': 'Navigare în subsol',
-  'a11y.language': 'Limbă',
-  'a11y.theme': 'Temă',
   'a11y.menu': 'Meniu',
+  'a11y.language': 'Limbă',
+
+
   'a11y.close': 'Închide',
   'a11y.external': 'se deschide într-o fereastră nouă',
 
@@ -52,41 +52,30 @@ const ro = {
   'stack.lead':
     'Ce folosesc pentru a construi și experimenta, grupat pe domenii. Fiecare proiect ia ce are nevoie, de aceea lista este largă intenționat.',
   'stack.areas': 'Domenii de lucru',
-  'area.frontend': 'Frontend',
-  'area.backend': 'Backend',
+  'area.frontend': 'Interfață',
+  'area.backend': 'Partea serverului',
   'area.databases': 'Baze de date',
   'area.security': 'Securitate',
   'area.games': 'Dezvoltare de jocuri',
 
-  'stack.web': 'Web și programare',
+  'stack.web': 'Site-uri și programare',
   'stack.games': 'Jocuri și instrumente',
   'stack.note': 'Fără niveluri, stele sau procente: doar instrumentele cu care am lucrat.',
 
   'projects.title': 'Proiecte',
   'projects.lead':
-    'Patru lucrări care arată cum gândesc și ce pot livra. Fiecare are o pagină cu context, funcționalități confirmate și starea actuală.',
+    'Patru proiecte care arată cum gândesc și ce pot crea. Fiecare are o pagină cu contextul și funcționalitățile confirmate.',
   'projects.view': 'Vezi proiectul',
-  'projects.individual': 'Proiect individual',
 
-  'status.inProgress': 'În dezvoltare',
-  'status.planning': 'În planificare',
-  'status.pending': 'Stare de confirmat',
-  'status.notSpecified': 'Stare neindicată',
 
-  'project.back': 'Înapoi la proiecte',
-  'project.summary': 'Rezumat',
-  'project.context': 'Context',
   'project.features': 'Funcționalități confirmate',
+  'project.context': 'Context',
+  'project.back': 'Înapoi la proiecte',
   'project.tech': 'Tehnologii',
-  'project.status': 'Starea actuală',
   'project.repo': 'Repository',
   'project.demo': 'Demo',
   'project.images': 'Imagini',
-  'project.links': 'Linkuri și imagini',
-  'project.pending': 'De adăugat',
-  'project.techPending': 'Tehnologii de confirmat',
-  'project.stateNote': 'Starea acestui proiect nu a fost încă confirmată. Va fi actualizată înainte de publicare.',
-  'project.notSpecifiedNote': 'Acest proiect nu are încă o stare indicată.',
+  'project.links': 'Linkuri către proiect',
 
   'project.blog.title': 'Blog în PHP și SQL',
   'project.blog.summary': 'Un blog în care fiecare autor își administrează doar propriile articole.',
@@ -101,19 +90,19 @@ const ro = {
   'project.shop.feature2': 'Urmărirea comenzilor',
   'project.shop.feature3': 'Monedă și metode de plată adaptate la țara utilizatorului',
 
-  'project.unity.title': 'RPG 2D top-down în Unity',
-  'project.unity.summary':
-    'RPG 2D top-down centrat pe magie, cu lore dezvoltată și un sistem magic coerent.',
-  'project.unity.context': 'Joc în dezvoltare. Magia este în centru: sistemul magic este complex și gândit să rămână coerent cu lore.',
+  'project.unity.title': 'RPG 2D cu vedere de sus în Unity',
+  'project.unity.summary': 'RPG 2D centrat pe magie, cu o lume bine conturată și un sistem magic coerent.',
+  'project.unity.context':
+    'Magia este în centrul jocului: sistemul magic complex este conceput să fie coerent cu universul jocului.',
   'project.unity.feature1': 'Sistem magic complex și coerent',
-  'project.unity.feature2': 'Lore dezvoltată',
-  'project.unity.feature3': 'Perspectivă top-down 2D',
+  'project.unity.feature2': 'Lume bine conturată',
+  'project.unity.feature3': 'Vedere de sus în 2D',
 
   'project.cpp.title': 'RPG 2D în C++ pur',
-  'project.cpp.summary': 'RPG 2D scris în C++, cu suport prevăzut pentru Windows, Linux și macOS.',
-  'project.cpp.context': 'Proiect individual în dezvoltare, scris în C++ pur. Lucrarea folosește biblioteci și instrumente de sprijin, fără a ascunde asta.',
+  'project.cpp.summary': 'Un joc RPG 2D, scris în C++.',
+  'project.cpp.context':
+    'Proiect individual, scris în C++ pur. Folosește biblioteci și instrumente auxiliare, menționate în mod transparent.',
   'project.cpp.feature1': 'RPG 2D în C++ pur',
-  'project.cpp.feature2': 'Suport prevăzut pentru Windows, Linux și macOS',
 
   'path.title': 'Parcurs',
   'path.lead': 'Studii și stagiu alături de proiecte proprii.',
@@ -129,42 +118,38 @@ const ro = {
   'cv.title': 'CV',
   'cv.lead': 'CV în PDF pentru descărcare.',
   'cv.button': 'Descarcă PDF',
-  'cv.pending': 'Fișierul nu a fost încă adăugat:',
 
   'contact.title': 'Contact',
   'contact.lead':
     'Pentru a vorbi despre un proiect web — sau pentru a vedea dacă are sens să lucrăm împreună.',
   'contact.direct': 'Direct',
-  'contact.directNote': 'Răspund prin email sau WhatsApp. Pe GitHub este codul public.',
-  'contact.form': 'Formular',
-  'contact.formNote': 'Nume, email și mesaj. Nimic altceva.',
-  'contact.email': 'Email',
+  'contact.form': 'Formular de contact',
+
+  'contact.formNote': 'Nume, adresă de e-mail și mesaj. Atât.',
+  'contact.email': 'E-mail',
   'contact.github': 'GitHub',
   'contact.whatsapp': 'WhatsApp',
 
   'form.name': 'Nume',
-  'form.email': 'Email',
+  'form.email': 'E-mail',
   'form.message': 'Mesaj',
   'form.namePh': 'Numele tău',
-  'form.emailPh': 'nume@exemplu.ro',
   'form.messagePh': 'Ce ai nevoie, până când și ce există deja.',
   'form.submit': 'Trimite mesajul',
   'form.sending': 'Se trimite…',
   'form.success': 'Mesaj trimis. Răspund cât de curând pot.',
-  'form.error': 'Trimiterea a eșuat. Încearcă din nou sau folosește emailul direct.',
+  'form.error': 'Mesajul nu a putut fi trimis. Încearcă din nou mai târziu.',
   'form.required': 'Completează acest câmp.',
-  'form.invalidEmail': 'Indică un email valid.',
-  'form.unconfigured':
-    'Trimiterea formularului nu este încă configurată. Folosește emailul direct până când va fi conectat.',
-  'form.noscript': 'Formularul are nevoie de JavaScript. Fără el, folosește emailul direct.',
+  'form.invalidEmail': 'Introdu o adresă de e-mail validă.',
+  'form.noscript': 'Activează JavaScript pentru a trimite acest formular.',
   'form.privacy': 'Politica de confidențialitate',
 
   'footer.nav': 'Navigare',
   'footer.legal': 'Legal',
   'footer.privacy': 'Confidențialitate',
   'footer.language': 'Limbă',
-  'footer.theme': 'Temă',
   'footer.note': 'Disponibil pentru proiecte web la distanță.',
+
 
   'theme.label': 'Temă',
   'theme.system': 'Sistem',
@@ -173,31 +158,30 @@ const ro = {
 
   'consent.title': 'Analiză fără cookie-uri',
   'consent.body':
-    'Folosesc Vercel Web Analytics pentru a ști ce pagini sunt vizitate, fără cookie-uri și fără a identifica persoane. Scriptul se încarcă doar dacă accepți.',
+    'Cu acordul tău, statisticile arată ce pagini sunt vizitate. Scriptul se încarcă numai după ce îți dai acordul.',
   'consent.accept': 'Accept analiza',
   'consent.reject': 'Refuz',
   'consent.settings': 'Preferințe de analiză',
 
-  'privacy.updated': 'Ultima actualizare: [DATA ACTUALIZĂRII]',
-  'privacy.intro':
-    'Această pagină explică ce date colectează site-ul, la ce folosesc, cât timp sunt păstrate și cum îți poți exercita drepturile. Câmpurile din paranteze pătrate sunt date care încă trebuie completate.',
+  'privacy.updated': 'Setări actuale',
+  'privacy.intro': 'Această pagină rezumă funcțiile de confidențialitate active în prezent pe acest site.',
   'privacy.form.title': 'Formular de contact',
   'privacy.form.body':
-    'Formularul cere doar nume, email și mesaj. Datele sunt trimise prin [FURNIZORUL FORMULARULUI] la [EMAIL DE CONTACT] și folosesc exclusiv pentru a răspunde mesajului. Temeiul legal este solicitarea ta; păstrarea este prevăzută pentru [PERIOADA DE PĂSTRARE].',
+    'Formularul de contact nu este disponibil și nu este afișat. Acest site nu trimite și nu colectează mesaje prin formular.',
   'privacy.analytics.title': 'Analiză',
   'privacy.analytics.body':
-    'Cu consimțământul tău, folosesc [FURNIZOR ȘI CONFIGURAȚIE DE ANALIZĂ] pentru a număra vizitele și a înțelege ce pagini sunt utile, fără cookie-uri și fără a identifica vizitatorii. Scriptul se încarcă doar după acceptare; dacă refuzi, nu se măsoară nimic.',
-  'privacy.storage.title': 'Servicii externe și stocare locală',
+    'Statisticile vizitelor sunt dezactivate. Acest site nu încarcă scripturi de analiză și nu trimite evenimente de utilizare.',
+  'privacy.storage.title': 'Preferințele browserului',
   'privacy.storage.body':
-    'Site-ul este găzduit de [GĂZDUIRE / FURNIZOR]. Preferințele de limbă și temă sunt salvate doar în browserul tău (localStorage), la fel ca opțiunea privind analiza. Nu folosesc cookie-uri publicitare sau trackere terțe.',
-  'privacy.retention.title': 'Păstrare',
+    'Preferințele de limbă și temă sunt salvate în browser pentru a rămâne disponibile la vizitele următoare. Le poți șterge din setările browserului.',
+  'privacy.retention.title': 'Preferințe salvate',
   'privacy.retention.body':
-    'Mesajele primite sunt păstrate [PERIOADA DE PĂSTRARE] și apoi șterse. Poți cere ștergerea mai devreme.',
-  'privacy.rights.title': 'Drepturi și contact',
+    'Acest site salvează în browser doar preferințele de limbă și temă. Nu păstrează mesaje de contact sau date de analiză.',
+  'privacy.rights.title': 'Opțiunile tale',
   'privacy.rights.body':
-    'Poți solicita accesul, rectificarea sau ștergerea datelor tale ori poți retrage consimțământul pentru analiză oricând, scriind la [EMAIL DE CONTACT]. Operatorul de date este [NUMELE OPERATORULUI].',
+    'Poți elimina aceste preferințe oricând, ștergând datele acestui site din setările browserului. Site-ul nu trimite și nu păstrează mesaje.',
   'privacy.note':
-    'Acest text descrie configurația reală a site-ului. Dacă formularul sau analiza se schimbă, pagina trebuie actualizată.',
+    'Acest site nu folosește cookie-uri publicitare sau instrumente publicitare de urmărire ale terților.',
   'privacy.back': 'Înapoi la început',
 
   'notFound.title': 'Pagina nu a fost găsită',

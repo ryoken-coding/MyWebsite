@@ -6,13 +6,12 @@
  * build's i18n check will tell you if any language is missing them).
  */
 
-export type ProjectStatus = 'inProgress' | 'planning' | 'notSpecified' | 'pendingConfirmation';
-
 export interface Project {
   slug: string;
   /** Translation key for the project's name / short title. */
   titleKey: string;
-  status: ProjectStatus;
+  /** Number of translated feature strings used by the detail page. */
+  featureCount: number;
   /** Technologies explicitly confirmed for this project. Empty = not provided yet. */
   tech: string[];
   /** Leave empty until a real repository, demo or screenshots exist. */
@@ -25,8 +24,7 @@ export const projects: Project[] = [
   {
     slug: 'blog',
     titleKey: 'project.blog.title',
-    // No status was confirmed for this project; do not imply one.
-    status: 'notSpecified',
+    featureCount: 2,
     tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'SQL'],
     repo: '',
     demo: '',
@@ -35,8 +33,7 @@ export const projects: Project[] = [
   {
     slug: 'hardware-store',
     titleKey: 'project.shop.title',
-    // No status was confirmed for this project; do not imply one.
-    status: 'notSpecified',
+    featureCount: 3,
     // No technology list was confirmed for this project — leave empty rather than guess.
     tech: [],
     repo: '',
@@ -46,7 +43,7 @@ export const projects: Project[] = [
   {
     slug: 'unity-rpg',
     titleKey: 'project.unity.title',
-    status: 'inProgress',
+    featureCount: 3,
     tech: ['Unity'],
     repo: '',
     demo: '',
@@ -55,9 +52,7 @@ export const projects: Project[] = [
   {
     slug: 'cpp-rpg',
     titleKey: 'project.cpp.title',
-    // Predicted to be finished by the author, but not confirmed yet.
-    // Switch to 'completed' only after the author confirms it.
-    status: 'pendingConfirmation',
+    featureCount: 1,
     tech: ['C++'],
     repo: '',
     demo: '',
