@@ -8,7 +8,7 @@
 const ptPT = {
   'site.name': 'Portefólio',
 
-  'meta.home.title': 'Programador web freelance — sites, interfaces e lojas online',
+  'meta.home.title': 'Programador freelance — sites, interfaces e lojas online',
   'meta.home.description':
     'Estudante de Gestão e Programação de Sistemas Informáticos e estagiário na Inova Digital. Desenvolvo sites, interfaces e lojas online para clientes à distância.',
   'meta.privacy.title': 'Privacidade',
@@ -23,10 +23,10 @@ const ptPT = {
 
   'a11y.skip': 'Saltar para o conteúdo',
   'a11y.mainNav': 'Navegação principal',
-  'a11y.footerNav': 'Navegação do rodapé',
-  'a11y.language': 'Idioma',
-  'a11y.theme': 'Tema',
   'a11y.menu': 'Menu',
+  'a11y.language': 'Idioma',
+
+
   'a11y.close': 'Fechar',
   'a11y.external': 'abre numa nova janela',
 
@@ -40,7 +40,7 @@ const ptPT = {
   'hero.lead':
     'Sou estudante de Gestão e Programação de Sistemas Informáticos e estou a estagiar na Inova Digital. Em cerca de um ano de prática — entre estudos, projetos pessoais e estágio — fiz um blogue, uma loja de hardware e dois RPGs. Trabalho apenas à distância.',
   'hero.cta.projects': 'Ver projetos',
-  'hero.cta.contact': 'Discutir um projeto web',
+  'hero.cta.contact': 'Falar sobre um projeto de site',
   'hero.panel.title': 'Em resumo',
   'hero.panel.study': 'A estudar',
   'hero.panel.course': 'Gestão e Programação de Sistemas Informáticos',
@@ -55,41 +55,30 @@ const ptPT = {
   'stack.lead':
     'O que uso para construir e experimentar, agrupado por área. Cada projeto puxa pelo que precisa, por isso a lista é larga de propósito.',
   'stack.areas': 'Áreas de trabalho',
-  'area.frontend': 'Frontend',
-  'area.backend': 'Backend',
+  'area.frontend': 'Interface',
+  'area.backend': 'Servidor',
   'area.databases': 'Bases de dados',
   'area.security': 'Segurança',
   'area.games': 'Desenvolvimento de jogos',
 
-  'stack.web': 'Web e programação',
+  'stack.web': 'Sites e programação',
   'stack.games': 'Jogos e ferramentas',
   'stack.note': 'Sem níveis, estrelas ou percentagens: só as ferramentas em que já trabalhei.',
 
   'projects.title': 'Projetos',
   'projects.lead':
-    'Quatro trabalhos que mostram como penso e o que consigo entregar. Cada um tem uma página com contexto, funcionalidades confirmadas e estado atual.',
+    'Quatro trabalhos que mostram como penso e o que consigo criar. Cada um tem uma página com o respetivo contexto e as funcionalidades confirmadas.',
   'projects.view': 'Ver projeto',
-  'projects.individual': 'Projeto individual',
 
-  'status.inProgress': 'Em desenvolvimento',
-  'status.planning': 'Em planeamento',
-  'status.pending': 'Estado a confirmar',
-  'status.notSpecified': 'Estado não indicado',
 
-  'project.back': 'Voltar aos projetos',
-  'project.summary': 'Resumo',
-  'project.context': 'Contexto',
   'project.features': 'Funcionalidades confirmadas',
+  'project.context': 'Contexto',
+  'project.back': 'Voltar aos projetos',
   'project.tech': 'Tecnologias',
-  'project.status': 'Estado atual',
   'project.repo': 'Repositório',
   'project.demo': 'Demonstração',
   'project.images': 'Imagens',
-  'project.links': 'Ligações e imagens',
-  'project.pending': 'A adicionar',
-  'project.techPending': 'Tecnologias a confirmar',
-  'project.stateNote': 'O estado deste projeto ainda não foi confirmado. Será atualizado antes da publicação.',
-  'project.notSpecifiedNote': 'Este projeto ainda não tem um estado indicado.',
+  'project.links': 'Ligações do projeto',
 
   'project.blog.title': 'Blogue com PHP e SQL',
   'project.blog.summary': 'Blogue onde cada autor gere apenas os seus próprios artigos.',
@@ -97,26 +86,29 @@ const ptPT = {
   'project.blog.feature1': 'Publicar, editar e apagar artigos',
   'project.blog.feature2': 'Apenas o autor de cada artigo pode editar ou apagar o seu conteúdo',
 
-  'project.shop.title': 'Loja de hardware com chatbot',
-  'project.shop.summary': 'Loja online de hardware com chatbot, acompanhamento de encomendas e moeda e pagamentos adaptados ao país.',
-  'project.shop.context': 'Projeto individual de loja online de hardware. Tem chatbot, acompanhamento de encomendas, e a moeda e os métodos de pagamento adaptam-se ao país do utilizador.',
-  'project.shop.feature1': 'Chatbot integrado na loja',
+  'project.shop.title': 'Loja de componentes informáticos com assistente virtual',
+  'project.shop.summary':
+    'Loja online de componentes informáticos com assistente virtual, acompanhamento de encomendas e moeda e pagamentos adaptados ao país.',
+  'project.shop.context':
+    'Projeto individual de loja online de componentes informáticos. Tem um assistente virtual e acompanhamento de encomendas; a moeda e os métodos de pagamento adaptam-se ao país do utilizador.',
+  'project.shop.feature1': 'Assistente virtual integrado na loja',
   'project.shop.feature2': 'Acompanhamento de encomendas',
   'project.shop.feature3': 'Moeda e métodos de pagamento adaptados ao país do utilizador',
 
-  'project.unity.title': 'RPG 2D top-down em Unity',
+  'project.unity.title': 'RPG 2D com vista de cima em Unity',
   'project.unity.summary':
-    'RPG 2D top-down centrado em magia, com lore desenvolvida e um sistema mágico coerente.',
-  'project.unity.context': 'Jogo em desenvolvimento. A magia está no centro: o sistema mágico é complexo e foi pensado para se manter coerente com a lore.',
+    'RPG 2D centrado na magia, com um universo desenvolvido e um sistema mágico coerente.',
+  'project.unity.context':
+    'A magia está no centro do projeto: o sistema mágico é complexo e foi pensado para se manter coerente com o universo do jogo.',
   'project.unity.feature1': 'Sistema mágico complexo e coerente',
-  'project.unity.feature2': 'Lore desenvolvida',
-  'project.unity.feature3': 'Vista top-down em 2D',
+  'project.unity.feature2': 'Universo desenvolvido',
+  'project.unity.feature3': 'Vista de cima em 2D',
 
   'project.cpp.title': 'RPG 2D em C++ puro',
-  'project.cpp.summary': 'RPG 2D escrito em C++, com suporte pretendido para Windows, Linux e macOS.',
-  'project.cpp.context': 'Projeto individual em desenvolvimento, escrito em C++ puro. O trabalho usa bibliotecas e ferramentas de apoio, e não esconde isso.',
+  'project.cpp.summary': 'RPG 2D escrito em C++.',
+  'project.cpp.context':
+    'Projeto individual escrito em C++ puro. Usa bibliotecas e ferramentas de apoio, algo que é indicado com transparência.',
   'project.cpp.feature1': 'RPG 2D em C++ puro',
-  'project.cpp.feature2': 'Suporte pretendido para Windows, Linux e macOS',
 
   'path.title': 'Percurso',
   'path.lead': 'Formação e estágio lado a lado com projetos próprios.',
@@ -132,13 +124,10 @@ const ptPT = {
   'cv.title': 'Currículo',
   'cv.lead': 'Currículo em PDF para descarregar.',
   'cv.button': 'Descarregar PDF',
-  'cv.pending': 'O ficheiro ainda não foi adicionado:',
 
   'contact.title': 'Contacto',
-  'contact.lead':
-    'Para falar de um projeto web — ou para perceber se faz sentido trabalharmos juntos.',
+  'contact.lead': 'Para falar de um projeto de site — ou para perceber se faz sentido trabalharmos juntos.',
   'contact.direct': 'Direto',
-  'contact.directNote': 'Respondo por email ou WhatsApp. O GitHub tem o código que estiver público.',
   'contact.form': 'Formulário',
   'contact.formNote': 'Nome, email e mensagem. Sem mais campos.',
   'contact.email': 'Email',
@@ -149,25 +138,22 @@ const ptPT = {
   'form.email': 'Email',
   'form.message': 'Mensagem',
   'form.namePh': 'Como te chamas',
-  'form.emailPh': 'nome@exemplo.com',
   'form.messagePh': 'O que precisas, para quando e o que já existe.',
   'form.submit': 'Enviar mensagem',
   'form.sending': 'A enviar…',
   'form.success': 'Mensagem enviada. Respondo assim que puder.',
-  'form.error': 'Não foi possível enviar. Tenta outra vez ou usa o email direto.',
+  'form.error': 'Não foi possível enviar a mensagem. Tenta novamente mais tarde.',
   'form.required': 'Preenche este campo.',
-  'form.invalidEmail': 'Indica um email válido.',
-  'form.unconfigured':
-    'O envio do formulário ainda não está configurado. Usa o email direto enquanto isto não for ligado.',
-  'form.noscript': 'O formulário precisa de JavaScript. Sem ele, usa o email direto.',
+  'form.invalidEmail': 'Indica um endereço de email válido.',
+  'form.noscript': 'Ativa o JavaScript para enviar este formulário.',
   'form.privacy': 'Política de privacidade',
 
   'footer.nav': 'Navegação',
   'footer.legal': 'Legal',
   'footer.privacy': 'Privacidade',
   'footer.language': 'Idioma',
-  'footer.theme': 'Tema',
-  'footer.note': 'Disponível para projetos web à distância.',
+  'footer.note': 'Disponível para projetos de criação de sites à distância.',
+
 
   'theme.label': 'Tema',
   'theme.system': 'Sistema',
@@ -176,31 +162,29 @@ const ptPT = {
 
   'consent.title': 'Analytics sem cookies',
   'consent.body':
-    'Uso o Vercel Web Analytics para saber que páginas são visitadas, sem cookies e sem identificar pessoas. O script só é carregado se aceitares.',
+    'Com o teu consentimento, a análise de visitas ajuda a perceber que páginas são consultadas. O script só é carregado depois de aceitares.',
   'consent.accept': 'Aceitar analytics',
   'consent.reject': 'Recusar',
   'consent.settings': 'Preferências de analytics',
 
-  'privacy.updated': 'Última atualização: [DATA DE ATUALIZAÇÃO]',
-  'privacy.intro':
-    'Esta página explica que dados este site recolhe, para que servem, durante quanto tempo são guardados e como podes exercer os teus direitos. Os campos entre parênteses retos são dados que ainda estão por preencher.',
+  'privacy.updated': 'Configuração atual',
+  'privacy.intro': 'Esta página resume as funcionalidades de privacidade atualmente ativas neste site.',
   'privacy.form.title': 'Formulário de contacto',
   'privacy.form.body':
-    'O formulário pede apenas nome, email e mensagem. Os dados são enviados através de [FORNECEDOR DO FORMULÁRIO] para [EMAIL DE CONTACTO] e servem exclusivamente para responder ao contacto. A base legal é o teu pedido de contacto; a conservação está prevista por [PRAZO DE RETENÇÃO].',
+    'O formulário de contacto não está disponível e não é apresentado. Este site não envia nem recolhe mensagens através do formulário.',
   'privacy.analytics.title': 'Analytics',
   'privacy.analytics.body':
-    'Com o teu consentimento, uso [FORNECEDOR E CONFIGURAÇÃO DE ANALYTICS] para contar visitas e perceber que páginas são úteis, sem cookies e sem identificar visitantes. O script só é carregado depois de aceitares; se recusares, nada é medido.',
-  'privacy.storage.title': 'Serviços externos e armazenamento local',
+    'A análise de visitas está desativada. Este site não carrega scripts de análise nem envia eventos de utilização.',
+  'privacy.storage.title': 'Preferências no navegador',
   'privacy.storage.body':
-    'O site é alojado em [ALOJAMENTO / FORNECEDOR]. As tuas preferências de idioma e de tema ficam guardadas apenas no teu navegador (localStorage) e a escolha sobre analytics também. Não uso cookies de publicidade nem rastreadores de terceiros.',
-  'privacy.retention.title': 'Conservação',
+    'As preferências de idioma e tema ficam guardadas no teu navegador para se manterem entre visitas. Podes apagá-las nas definições do navegador.',
+  'privacy.retention.title': 'Preferências guardadas',
   'privacy.retention.body':
-    'As mensagens recebidas são conservadas por [PRAZO DE RETENÇÃO] e depois eliminadas. Podes pedir a eliminação antes desse prazo.',
-  'privacy.rights.title': 'Direitos e contacto',
+    'Este site guarda apenas as preferências de idioma e tema neste navegador. Não guarda mensagens de contacto nem dados de análise de visitas.',
+  'privacy.rights.title': 'As tuas opções',
   'privacy.rights.body':
-    'Podes pedir acesso, correção ou eliminação dos teus dados, ou retirar o consentimento de analytics a qualquer momento, escrevendo para [EMAIL DE CONTACTO]. O responsável pelo tratamento é [NOME DO RESPONSÁVEL].',
-  'privacy.note':
-    'Este texto descreve a configuração real do site. Se o formulário ou o analytics forem alterados, esta página tem de ser atualizada.',
+    'Podes remover estas preferências a qualquer momento, apagando os dados deste site nas definições do navegador. Este site não envia nem guarda mensagens.',
+  'privacy.note': 'Este site não usa cookies publicitários nem rastreadores de publicidade de terceiros.',
   'privacy.back': 'Voltar ao início',
 
   'notFound.title': 'Página não encontrada',

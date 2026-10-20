@@ -1,23 +1,139 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { getDictionary, localePath } from '../i18n';
+import '../styles/global.css';
+import { getDictionary } from '../i18n';
+import { locales } from '../i18n/locales';
 
-const locale = 'pt';
-const t = (key: string) => (getDictionary(locale) as Record<string, string>)[key] ?? key;
+const defaultDictionary = getDictionary('pt');
+const languageInfo = locales.map(({ code, tag, dir, nativeName }) => ({ code, tag, dir, nativeName }));
+const messages = Object.fromEntries(
+  locales.map(({ code }) => {
+    const dictionary = getDictionary(code);
+    return [
+      code,
+      {
+        title: dictionary['notFound.title'],
+        body: dictionary['notFound.body'],
+        cta: dictionary['notFound.cta'],
+        siteName: dictionary['site.name'],
+        languageLabel: dictionary['a11y.language'],
+      },
+    ];
+  })
+);
 ---
-<BaseLayout
-  locale={locale}
-  title={`${t('notFound.title')} · ${t('site.name')}`}
-  description={t('notFound.body')}
-  noindex
-  noAlternates
->
-  <div class="container not-found">
-    <p class="mono">404</p>
-    <h1>{t('notFound.title')}</h1>
-    <p class="lead">{t('notFound.body')}</p>
-    <p>
-      <a class="btn btn--primary" href={localePath(locale)}>{t('notFound.cta')}</a>
-    </p>
-  </div>
-</BaseLayout>
+<!doctype html>
+<html lang="pt-PT" dir="ltr" data-locale="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{defaultDictionary['notFound.title']} · {defaultDictionary['site.name']}</title>
+    <meta name="description" content={defaultDictionary['notFound.body']} />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var mode = saved === 'light' || saved === 'dark' || saved === 'system' ? saved : 'system';
+          var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.dataset.themeMode = mode;
+          document.documentElement.dataset.theme = mode === 'system' ? (dark ? 'dark' : 'light') : mode;
+        } catch (e) {}
+      })();
+    </script>
+    <style>
+      .not-found[hidden] { display: none; }
+      html.js .not-found--nojs { display: none; }
+      .locale-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+        gap: 0.55rem;
+        width: min(100%, 42rem);
+        margin-block-start: 1rem;
+      }
+      .locale-list a {
+        display: block;
+        padding: 0.55rem 0.8rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface);
+        text-decoration: none;
+      }
+      .locale-list a:hover { border-color: var(--accent); color: var(--accent); }
+    </style>
+  </head>
+  <body id="top">
+    <div class="container not-found not-found--nojs">
+      <p class="mono">404</p>
+      <h1>{defaultDictionary['notFound.title']}</h1>
+      <p class="lead">{defaultDictionary['notFound.body']}</p>
+      <nav aria-label={defaultDictionary['a11y.language']}>
+        <ul class="locale-list">
+          {languageInfo.map((language) => (
+            <li>
+              <a href={`/${language.code}/`} lang={language.tag} hreflang={language.tag} dir={language.dir}>
+                {language.nativeName}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+
+    <main class="container not-found not-found--localized" id="localized-404" hidden>
+      <p class="mono">404</p>
+      <h1 data-not-found-title></h1>
+      <p class="lead" data-not-found-body></p>
+      <p><a class="btn btn--primary" data-not-found-cta><span data-not-found-cta-text></span></a></p>
+      <nav aria-label={defaultDictionary['a11y.language']} data-locale-nav>
+        <ul class="locale-list">
+          {languageInfo.map((language) => (
+            <li>
+              <a href={`/${language.code}/`} lang={language.tag} hreflang={language.tag} dir={language.dir}>
+                {language.nativeName}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </main>
+
+    <script define:vars={{ languageInfo, messages }}>
+      const supported = languageInfo.map((language) => language.code);
+      const byCode = Object.fromEntries(languageInfo.map((language) => [language.code, language]));
+      const pathCode = window.location.pathname.split('/').filter(Boolean)[0]?.toLowerCase();
+      const browserLanguage = (navigator.language || 'pt').toLowerCase();
+      const savedLanguage = (() => {
+        try { return localStorage.getItem('locale'); } catch (e) { return null; }
+      })();
+      let browserCode = browserLanguage.split('-')[0];
+      if (browserLanguage.startsWith('pt-br')) browserCode = 'pt-br';
+      else if (browserLanguage.startsWith('zh')) {
+        browserCode = browserLanguage.includes('tw') || browserLanguage.includes('hant') ? 'zh-tw' : 'zh-cn';
+      }
+      const locale = supported.includes(pathCode)
+        ? pathCode
+        : supported.includes(savedLanguage)
+          ? savedLanguage
+          : supported.includes(browserCode)
+            ? browserCode
+            : 'pt';
+      const meta = byCode[locale];
+      const copy = messages[locale];
+      document.documentElement.lang = meta.tag;
+      document.documentElement.dir = meta.dir;
+      document.documentElement.dataset.locale = locale;
+      document.querySelector('[data-not-found-title]').textContent = copy.title;
+      document.querySelector('[data-not-found-body]').textContent = copy.body;
+      document.querySelector('[data-not-found-cta-text]').textContent = copy.cta;
+      document.querySelector('[data-not-found-cta]').href = `/${locale}/`;
+      document.title = `${copy.title} · ${copy.siteName}`;
+      document.querySelector('meta[name="description"]').content = copy.body;
+      document.querySelectorAll('[data-locale-nav]').forEach((navigation) => {
+        navigation.setAttribute('aria-label', copy.languageLabel);
+      });
+      document.getElementById('localized-404').hidden = false;
+    </script>
+  </body>
+</html>

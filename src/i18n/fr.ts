@@ -20,10 +20,10 @@ const fr = {
 
   'a11y.skip': 'Aller au contenu',
   'a11y.mainNav': 'Navigation principale',
-  'a11y.footerNav': 'Navigation de pied de page',
-  'a11y.language': 'Langue',
-  'a11y.theme': 'Thème',
   'a11y.menu': 'Menu',
+  'a11y.language': 'Langue',
+
+
   'a11y.close': 'Fermer',
   'a11y.external': 's’ouvre dans une nouvelle fenêtre',
 
@@ -52,8 +52,8 @@ const fr = {
   'stack.lead':
     'Ce que j’utilise pour construire et expérimenter, regroupé par domaine. Chaque projet mobilise ce dont il a besoin, d’où une liste volontairement large.',
   'stack.areas': 'Domaines de travail',
-  'area.frontend': 'Frontend',
-  'area.backend': 'Backend',
+  'area.frontend': 'Interface',
+  'area.backend': 'Serveur',
   'area.databases': 'Bases de données',
   'area.security': 'Sécurité',
   'area.games': 'Développement de jeux',
@@ -64,29 +64,18 @@ const fr = {
 
   'projects.title': 'Projets',
   'projects.lead':
-    'Quatre travaux qui montrent ma façon de réfléchir et ce que je peux livrer. Chacun a une page avec le contexte, les fonctionnalités confirmées et son état actuel.',
+    'Quatre réalisations qui montrent ma façon de réfléchir et ce que je peux créer. Chacune a une page présentant son contexte et ses fonctionnalités confirmées.',
   'projects.view': 'Voir le projet',
-  'projects.individual': 'Projet individuel',
 
-  'status.inProgress': 'En développement',
-  'status.planning': 'En préparation',
-  'status.pending': 'État à confirmer',
-  'status.notSpecified': 'État non indiqué',
 
-  'project.back': 'Retour aux projets',
-  'project.summary': 'Résumé',
-  'project.context': 'Contexte',
   'project.features': 'Fonctionnalités confirmées',
+  'project.context': 'Contexte',
+  'project.back': 'Retour aux projets',
   'project.tech': 'Technologies',
-  'project.status': 'État actuel',
   'project.repo': 'Dépôt',
   'project.demo': 'Démo',
   'project.images': 'Images',
-  'project.links': 'Liens et images',
-  'project.pending': 'À ajouter',
-  'project.techPending': 'Technologies à confirmer',
-  'project.stateNote': 'L’état de ce projet n’a pas encore été confirmé. Il sera mis à jour avant la publication.',
-  'project.notSpecifiedNote': 'Ce projet n’a pas encore d’état indiqué.',
+  'project.links': 'Liens du projet',
 
   'project.blog.title': 'Blog en PHP et SQL',
   'project.blog.summary': 'Un blog où chaque auteur ne gère que ses propres articles.',
@@ -94,26 +83,29 @@ const fr = {
   'project.blog.feature1': 'Publier, modifier et supprimer des articles',
   'project.blog.feature2': 'Seul l’auteur d’un article peut modifier ou supprimer son contenu',
 
-  'project.shop.title': 'Boutique de matériel avec chatbot',
-  'project.shop.summary': 'Boutique en ligne de matériel avec chatbot, suivi des commandes et devise et paiements adaptés au pays.',
-  'project.shop.context': 'Projet individuel de boutique en ligne de matériel. Elle comprend un chatbot et le suivi des commandes ; la devise et les moyens de paiement s’adaptent au pays de l’utilisateur.',
-  'project.shop.feature1': 'Chatbot intégré à la boutique',
+  'project.shop.title': 'Boutique de composants informatiques avec assistant conversationnel',
+  'project.shop.summary':
+    'Boutique en ligne de composants informatiques avec assistant conversationnel, suivi des commandes et devise et paiements adaptés au pays.',
+  'project.shop.context':
+    'Projet individuel de boutique en ligne de composants informatiques. Elle comprend un assistant conversationnel et le suivi des commandes ; la devise et les moyens de paiement s’adaptent au pays de l’utilisateur.',
+  'project.shop.feature1': 'Assistant conversationnel intégré à la boutique',
   'project.shop.feature2': 'Suivi des commandes',
   'project.shop.feature3': 'Devise et moyens de paiement adaptés au pays de l’utilisateur',
 
-  'project.unity.title': 'RPG 2D top-down sous Unity',
+  'project.unity.title': 'RPG 2D en vue de dessus avec Unity',
   'project.unity.summary':
-    'RPG 2D top-down centré sur la magie, avec une lore développée et un système magique cohérent.',
-  'project.unity.context': 'Jeu en développement. La magie est au centre : le système magique est complexe et conçu pour rester cohérent avec la lore.',
+    'RPG 2D centré sur la magie, avec un univers riche et un système magique cohérent.',
+  'project.unity.context':
+    'La magie est au cœur du jeu : son système magique complexe est conçu pour rester cohérent avec l’univers du jeu.',
   'project.unity.feature1': 'Système magique complexe et cohérent',
-  'project.unity.feature2': 'Lore développée',
-  'project.unity.feature3': 'Vue top-down en 2D',
+  'project.unity.feature2': 'Univers riche',
+  'project.unity.feature3': 'Vue de dessus en 2D',
 
   'project.cpp.title': 'RPG 2D en C++ pur',
-  'project.cpp.summary': 'RPG 2D écrit en C++, avec prise en charge prévue de Windows, Linux et macOS.',
-  'project.cpp.context': 'Projet individuel en développement, écrit en C++ pur. Le travail utilise des bibliothèques et des outils, sans le cacher.',
+  'project.cpp.summary': 'RPG 2D écrit en C++.',
+  'project.cpp.context':
+    'Projet individuel écrit en C++ pur. Il utilise des bibliothèques et des outils complémentaires, mentionnés en toute transparence.',
   'project.cpp.feature1': 'RPG 2D en C++ pur',
-  'project.cpp.feature2': 'Prise en charge prévue de Windows, Linux et macOS',
 
   'path.title': 'Parcours',
   'path.lead': 'Formation et stage, en parallèle de projets personnels.',
@@ -129,43 +121,38 @@ const fr = {
   'cv.title': 'CV',
   'cv.lead': 'CV au format PDF à télécharger.',
   'cv.button': 'Télécharger le PDF',
-  'cv.pending': 'Le fichier n’a pas encore été ajouté :',
 
   'contact.title': 'Contact',
   'contact.lead':
     'Pour parler d’un projet web — ou voir si travailler ensemble a du sens.',
   'contact.direct': 'Direct',
-  'contact.directNote':
-    'Je réponds par email ou WhatsApp. GitHub contient le code qui est public.',
-  'contact.form': 'Formulaire',
-  'contact.formNote': 'Nom, email et message. Rien de plus.',
-  'contact.email': 'Email',
+  'contact.form': 'Formulaire de contact',
+
+  'contact.formNote': 'Nom, e-mail et message. Rien de plus.',
+  'contact.email': 'E-mail',
   'contact.github': 'GitHub',
   'contact.whatsapp': 'WhatsApp',
 
   'form.name': 'Nom',
-  'form.email': 'Email',
+  'form.email': 'E-mail',
   'form.message': 'Message',
   'form.namePh': 'Votre nom',
-  'form.emailPh': 'nom@exemple.com',
   'form.messagePh': 'Ce dont vous avez besoin, pour quand, et ce qui existe déjà.',
   'form.submit': 'Envoyer le message',
   'form.sending': 'Envoi…',
   'form.success': 'Message envoyé. Je réponds dès que possible.',
-  'form.error': 'L’envoi a échoué. Réessayez ou utilisez l’email direct.',
+  'form.error': 'Le message n’a pas pu être envoyé. Réessayez plus tard.',
   'form.required': 'Remplissez ce champ.',
-  'form.invalidEmail': 'Indiquez un email valide.',
-  'form.unconfigured':
-    'L’envoi du formulaire n’est pas encore configuré. Utilisez l’email direct en attendant.',
-  'form.noscript': 'Le formulaire nécessite JavaScript. Sans lui, utilisez l’email direct.',
+  'form.invalidEmail': 'Saisissez une adresse e-mail valide.',
+  'form.noscript': 'Activez JavaScript pour envoyer ce formulaire.',
   'form.privacy': 'Politique de confidentialité',
 
   'footer.nav': 'Navigation',
   'footer.legal': 'Mentions légales',
   'footer.privacy': 'Confidentialité',
   'footer.language': 'Langue',
-  'footer.theme': 'Thème',
   'footer.note': 'Disponible pour des projets web à distance.',
+
 
   'theme.label': 'Thème',
   'theme.system': 'Système',
@@ -174,31 +161,30 @@ const fr = {
 
   'consent.title': 'Mesure d’audience sans cookies',
   'consent.body':
-    'J’utilise Vercel Web Analytics pour savoir quelles pages sont consultées, sans cookies et sans identifier les visiteurs. Le script n’est chargé que si vous acceptez.',
+    'Avec votre accord, la mesure des visites indique quelles pages sont consultées. Le script n’est chargé qu’après votre acceptation.',
   'consent.accept': 'Accepter la mesure d’audience',
   'consent.reject': 'Refuser',
   'consent.settings': 'Préférences de mesure d’audience',
 
-  'privacy.updated': 'Dernière mise à jour : [DATE DE MISE À JOUR]',
+  'privacy.updated': 'Paramètres actuels',
   'privacy.intro':
-    'Cette page explique quelles données ce site collecte, à quoi elles servent, combien de temps elles sont conservées et comment exercer vos droits. Les champs entre crochets restent à compléter.',
+    'Cette page résume les fonctionnalités de confidentialité actuellement actives sur ce site.',
   'privacy.form.title': 'Formulaire de contact',
   'privacy.form.body':
-    'Le formulaire demande uniquement un nom, un email et un message. Les données sont transmises via [FOURNISSEUR DU FORMULAIRE] à [EMAIL DE CONTACT] et servent exclusivement à répondre à votre message. La base légale est votre demande de contact ; la conservation est prévue pour [DURÉE DE CONSERVATION].',
+    'Le formulaire de contact n’est pas disponible et n’est pas affiché. Ce site n’envoie ni ne recueille de messages par ce formulaire.',
   'privacy.analytics.title': 'Mesure d’audience',
   'privacy.analytics.body':
-    'Avec votre consentement, j’utilise [FOURNISSEUR ET CONFIGURATION DE MESURE D’AUDIENCE] pour compter les visites et comprendre quelles pages sont utiles, sans cookies et sans identifier les visiteurs. Le script n’est chargé qu’après votre acceptation ; si vous refusez, rien n’est mesuré.',
-  'privacy.storage.title': 'Services externes et stockage local',
+    'La mesure des visites est désactivée. Ce site ne charge aucun script de mesure et n’envoie aucun événement d’utilisation.',
+  'privacy.storage.title': 'Préférences du navigateur',
   'privacy.storage.body':
-    'Le site est hébergé par [HÉBERGEUR]. Vos préférences de langue et de thème sont stockées uniquement dans votre navigateur (localStorage), tout comme votre choix concernant la mesure d’audience. Je n’utilise ni cookies publicitaires ni traceurs tiers.',
-  'privacy.retention.title': 'Conservation',
+    'Vos préférences de langue et de thème sont enregistrées dans votre navigateur pour être conservées d’une visite à l’autre. Vous pouvez les effacer dans ses paramètres.',
+  'privacy.retention.title': 'Préférences enregistrées',
   'privacy.retention.body':
-    'Les messages reçus sont conservés pendant [DURÉE DE CONSERVATION], puis supprimés. Vous pouvez demander leur suppression avant ce délai.',
-  'privacy.rights.title': 'Droits et contact',
+    'Ce site enregistre uniquement les préférences de langue et de thème dans ce navigateur. Il ne conserve ni messages de contact ni données de mesure d’audience.',
+  'privacy.rights.title': 'Vos choix',
   'privacy.rights.body':
-    'Vous pouvez demander l’accès, la rectification ou la suppression de vos données, ou retirer votre consentement à la mesure d’audience à tout moment, en écrivant à [EMAIL DE CONTACT]. Le responsable du traitement est [NOM DU RESPONSABLE].',
-  'privacy.note':
-    'Ce texte décrit la configuration réelle du site. Si le formulaire ou la mesure d’audience changent, cette page doit être mise à jour.',
+    'Vous pouvez supprimer ces préférences à tout moment en effaçant les données de ce site dans les paramètres du navigateur. Ce site n’envoie ni ne conserve de messages.',
+  'privacy.note': 'Ce site n’utilise ni cookies publicitaires ni traceurs publicitaires tiers.',
   'privacy.back': 'Retour à l’accueil',
 
   'notFound.title': 'Page introuvable',

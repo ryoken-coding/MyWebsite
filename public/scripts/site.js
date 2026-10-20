@@ -73,8 +73,7 @@
   var onSystemChange = function () {
     if (readMode() === 'system') applyMode('system', false);
   };
-  if (systemQuery.addEventListener) systemQuery.addEventListener('change', onSystemChange);
-  else if (systemQuery.addListener) systemQuery.addListener(onSystemChange);
+  systemQuery.addEventListener('change', onSystemChange);
 
   /* ---------------------------------------------------------------------------
      Mobile menu
@@ -132,8 +131,9 @@
       var code = langSelect.value;
       var current = langSelect.dataset.current;
       var segments = window.location.pathname.split('/').filter(Boolean);
+      var goHome = langSelect.dataset.fallbackHome === 'true';
       var tail = segments[0] === current ? segments.slice(1) : segments;
-      var target = '/' + code + '/' + (tail.length ? tail.join('/') + '/' : '');
+      var target = goHome || !tail.length ? '/' + code + '/' : '/' + code + '/' + tail.join('/') + '/';
       try {
         localStorage.setItem(LOCALE_KEY, code);
       } catch (e) {}
@@ -260,9 +260,9 @@
       var value = field.value.trim();
       var message = '';
       if (field.name === '_gotcha') return true;
-      if (!value) message = form.dataset.msgRequired || 'Required';
+      if (!value) message = form.dataset.msgRequired;
       else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value))
-        message = form.dataset.msgInvalidEmail || 'Invalid email';
+        message = form.dataset.msgInvalidEmail;
       setFieldError(field, message);
       return !message;
     }
@@ -296,11 +296,7 @@
         return;
       }
 
-      if (!endpoint) {
-        // Never pretend a message was sent when the integration is missing.
-        setStatus(form.dataset.msgUnconfigured || '', 'error');
-        return;
-      }
+      if (!endpoint) return; // A form is never rendered without a configured endpoint.
 
       var payload = new FormData(form);
       payload.delete('_gotcha');

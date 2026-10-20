@@ -20,10 +20,10 @@ const en = {
 
   'a11y.skip': 'Skip to content',
   'a11y.mainNav': 'Main navigation',
-  'a11y.footerNav': 'Footer navigation',
-  'a11y.language': 'Language',
-  'a11y.theme': 'Theme',
   'a11y.menu': 'Menu',
+  'a11y.language': 'Language',
+
+
   'a11y.close': 'Close',
   'a11y.external': 'opens in a new window',
 
@@ -64,29 +64,18 @@ const en = {
 
   'projects.title': 'Projects',
   'projects.lead':
-    'Four pieces of work that show how I think and what I can deliver. Each has a page with context, confirmed features and its current state.',
+    'Four projects that show how I think and what I can build. Each has a page with its context and confirmed features.',
   'projects.view': 'View project',
-  'projects.individual': 'Individual project',
 
-  'status.inProgress': 'In development',
-  'status.planning': 'In planning',
-  'status.pending': 'Status to confirm',
-  'status.notSpecified': 'Status not stated',
 
-  'project.back': 'Back to projects',
-  'project.summary': 'Summary',
-  'project.context': 'Context',
   'project.features': 'Confirmed features',
+  'project.context': 'Context',
+  'project.back': 'Back to projects',
   'project.tech': 'Technologies',
-  'project.status': 'Current state',
   'project.repo': 'Repository',
   'project.demo': 'Demo',
   'project.images': 'Images',
-  'project.links': 'Links and images',
-  'project.pending': 'To be added',
-  'project.techPending': 'Technologies to be confirmed',
-  'project.stateNote': 'This project’s status has not been confirmed yet. It will be updated before publication.',
-  'project.notSpecifiedNote': 'This project has no stated status yet.',
+  'project.links': 'Project links',
 
   'project.blog.title': 'Blog with PHP and SQL',
   'project.blog.summary': 'A blog where each author manages only their own articles.',
@@ -104,16 +93,17 @@ const en = {
   'project.unity.title': '2D top-down RPG in Unity',
   'project.unity.summary':
     'A magic-centred 2D top-down RPG with developed lore and a coherent magic system.',
-  'project.unity.context': 'A game in development. Magic is at the centre: the magic system is complex and designed to stay coherent with the lore.',
+  'project.unity.context':
+    'Magic is at the heart of the game: its complex magic system is designed to stay consistent with the game world.',
   'project.unity.feature1': 'Complex, coherent magic system',
   'project.unity.feature2': 'Developed lore',
   'project.unity.feature3': '2D top-down view',
 
   'project.cpp.title': '2D RPG in plain C++',
-  'project.cpp.summary': 'A 2D RPG written in C++, intended to support Windows, Linux and macOS.',
-  'project.cpp.context': 'An individual project in development, written in plain C++. The work uses supporting libraries and tools, and does not hide that.',
+  'project.cpp.summary': 'A 2D RPG written in C++.',
+  'project.cpp.context':
+    'An individual project written in pure C++. It uses supporting libraries and tools, and that is stated openly.',
   'project.cpp.feature1': '2D RPG in plain C++',
-  'project.cpp.feature2': 'Intended support for Windows, Linux and macOS',
 
   'path.title': 'Background',
   'path.lead': 'Study and internship alongside personal projects.',
@@ -129,16 +119,14 @@ const en = {
   'cv.title': 'CV',
   'cv.lead': 'CV as a PDF to download.',
   'cv.button': 'Download PDF',
-  'cv.pending': 'The file has not been added yet:',
 
   'contact.title': 'Contact',
   'contact.lead':
     'To talk about a web project — or to see whether working together makes sense.',
   'contact.direct': 'Direct',
-  'contact.directNote':
-    'I reply by email or WhatsApp. GitHub holds whatever code is public.',
-  'contact.form': 'Form',
-  'contact.formNote': 'Name, email and message. Nothing else.',
+  'contact.form': 'Contact form',
+
+  'contact.formNote': 'Name, email and message. No other fields.',
   'contact.email': 'Email',
   'contact.github': 'GitHub',
   'contact.whatsapp': 'WhatsApp',
@@ -147,25 +135,22 @@ const en = {
   'form.email': 'Email',
   'form.message': 'Message',
   'form.namePh': 'Your name',
-  'form.emailPh': 'name@example.com',
   'form.messagePh': 'What you need, by when, and what already exists.',
   'form.submit': 'Send message',
   'form.sending': 'Sending…',
   'form.success': 'Message sent. I will reply as soon as I can.',
-  'form.error': 'Could not send. Try again or use the direct email.',
+  'form.error': 'The message could not be sent. Please try again later.',
   'form.required': 'Please fill in this field.',
   'form.invalidEmail': 'Enter a valid email address.',
-  'form.unconfigured':
-    'Form sending is not configured yet. Use the direct email until this is connected.',
-  'form.noscript': 'The form needs JavaScript. Without it, use the direct email.',
+  'form.noscript': 'Enable JavaScript to submit this form.',
   'form.privacy': 'Privacy policy',
 
   'footer.nav': 'Navigation',
   'footer.legal': 'Legal',
   'footer.privacy': 'Privacy',
   'footer.language': 'Language',
-  'footer.theme': 'Theme',
   'footer.note': 'Available for remote web projects.',
+
 
   'theme.label': 'Theme',
   'theme.system': 'System',
@@ -174,31 +159,29 @@ const en = {
 
   'consent.title': 'Cookieless analytics',
   'consent.body':
-    'I use Vercel Web Analytics to see which pages are visited, without cookies and without identifying anyone. The script only loads if you accept.',
+    'With your consent, visitor analytics helps show which pages are viewed. The script only loads after you accept.',
   'consent.accept': 'Accept analytics',
   'consent.reject': 'Decline',
   'consent.settings': 'Analytics preferences',
 
-  'privacy.updated': 'Last updated: [LAST UPDATED DATE]',
-  'privacy.intro':
-    'This page explains what data this site collects, what it is for, how long it is kept and how you can exercise your rights. Fields in square brackets are details that still need to be filled in.',
+  'privacy.updated': 'Current settings',
+  'privacy.intro': 'This page summarizes the privacy-related features currently active on this site.',
   'privacy.form.title': 'Contact form',
   'privacy.form.body':
-    'The form asks for a name, email and message only. The data is sent through [FORM PROVIDER] to [CONTACT EMAIL] and is used solely to reply to your message. The legal basis is your contact request; retention is set at [RETENTION PERIOD].',
+    'The contact form is not available and is not displayed. This site does not send or collect messages through the form.',
   'privacy.analytics.title': 'Analytics',
   'privacy.analytics.body':
-    'With your consent, I use [ANALYTICS PROVIDER AND CONFIGURATION] to count visits and understand which pages are useful, without cookies and without identifying visitors. The script only loads after you accept; if you decline, nothing is measured.',
-  'privacy.storage.title': 'External services and local storage',
+    'Visitor analytics is disabled. This site does not load analytics scripts or send usage events.',
+  'privacy.storage.title': 'Browser preferences',
   'privacy.storage.body':
-    'The site is hosted by [HOSTING PROVIDER]. Your language and theme preferences are stored only in your browser (localStorage), as is your analytics choice. I use no advertising cookies or third-party trackers.',
-  'privacy.retention.title': 'Retention',
+    'Your language and theme preferences are saved in your browser so they persist between visits. You can clear them in your browser settings.',
+  'privacy.retention.title': 'Saved preferences',
   'privacy.retention.body':
-    'Messages received are kept for [RETENTION PERIOD] and then deleted. You can ask for deletion sooner.',
-  'privacy.rights.title': 'Rights and contact',
+    'This site stores only language and theme preferences in this browser. It does not store contact messages or analytics data.',
+  'privacy.rights.title': 'Your choices',
   'privacy.rights.body':
-    'You can request access, correction or deletion of your data, or withdraw analytics consent at any time, by writing to [CONTACT EMAIL]. The data controller is [DATA CONTROLLER NAME].',
-  'privacy.note':
-    'This text describes the site’s actual configuration. If the form or analytics change, this page must be updated.',
+    'You can remove these preferences at any time by clearing this site’s data in your browser settings. This site does not send or store messages.',
+  'privacy.note': 'This site does not use advertising cookies or third-party advertising trackers.',
   'privacy.back': 'Back to home',
 
   'notFound.title': 'Page not found',

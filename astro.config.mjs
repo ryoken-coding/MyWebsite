@@ -1,10 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// The public address is only used for canonical links, hreflang and the sitemap.
-// Set PUBLIC_SITE_URL in Vercel to the deployment address (or a future domain).
-// Until then the fallback below is a placeholder, not a real address.
-const site = process.env.PUBLIC_SITE_URL || 'https://mywebsite.vercel.app';
+// SEO URLs are emitted only after the real public origin is configured.
+// Never publish a made-up canonical address or sitemap hostname.
+const site = process.env.PUBLIC_SITE_URL?.trim().replace(/\/+$/, '') || undefined;
 
 export default defineConfig({
   site,

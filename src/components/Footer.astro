@@ -1,7 +1,7 @@
 ---
 import { localePath } from '../i18n';
 import { locales } from '../i18n/locales';
-import { analytics } from '../data/site';
+import { analytics, contact, formEndpoint } from '../data/site';
 import Icon from './Icon.astro';
 
 interface Props {
@@ -12,6 +12,7 @@ const { locale, t } = Astro.props as Props;
 const home = localePath(locale);
 const privacy = localePath(locale, 'privacy');
 const year = new Date().getFullYear();
+const hasContact = Boolean(contact.email || contact.github || contact.whatsapp || formEndpoint);
 const themeModes = [
   { value: 'system', label: 'theme.system', icon: 'auto' },
   { value: 'light', label: 'theme.light', icon: 'sun' },
@@ -26,23 +27,23 @@ const themeModes = [
           <span class="brand-mark" aria-hidden="true"><Icon name="code" size={17} /></span>
           <span class="brand-name">{t('site.name')}</span>
         </a>
-        <p>{t('footer.note')}</p>
+        {hasContact && <p>{t('footer.note')}</p>}
       </div>
 
-      <div class="footer-col">
+      <nav class="footer-col" aria-label={t('footer.nav')}>
         <h2>{t('footer.nav')}</h2>
         <ul>
           <li><a href={`${home}#projects`}>{t('nav.projects')}</a></li>
           <li><a href={`${home}#path`}>{t('nav.path')}</a></li>
-          <li><a href={`${home}#contact`}>{t('nav.contact')}</a></li>
+          {hasContact && <li><a href={`${home}#contact`}>{t('nav.contact')}</a></li>}
         </ul>
-      </div>
+      </nav>
 
       <div class="footer-col">
         <h2>{t('footer.language')}</h2>
         <ul>
-          {locales.filter((l) => l.code === 'pt' || l.code === 'pt-br' || l.code === 'en' || l.code === 'ar').map((l) => (
-            <li><a href={`/${l.code}/`} lang={l.tag} hreflang={l.tag} dir={l.dir}>{l.nativeName}</a></li>
+          {locales.filter((item) => item.code === 'pt' || item.code === 'pt-br' || item.code === 'en' || item.code === 'ar').map((item) => (
+            <li><a href={`/${item.code}/`} lang={item.tag} hreflang={item.tag} dir={item.dir}>{item.nativeName}</a></li>
           ))}
           <li><button type="button" class="linklike" data-open-lang>{t('a11y.language')} (21)</button></li>
         </ul>
@@ -70,7 +71,6 @@ const themeModes = [
           </label>
         ))}
       </fieldset>
-      <span class="mono">Astro · Vercel</span>
     </div>
   </div>
 </footer>

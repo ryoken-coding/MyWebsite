@@ -20,10 +20,10 @@ const es = {
 
   'a11y.skip': 'Saltar al contenido',
   'a11y.mainNav': 'Navegación principal',
-  'a11y.footerNav': 'Navegación del pie de página',
-  'a11y.language': 'Idioma',
-  'a11y.theme': 'Tema',
   'a11y.menu': 'Menú',
+  'a11y.language': 'Idioma',
+
+
   'a11y.close': 'Cerrar',
   'a11y.external': 'se abre en una ventana nueva',
 
@@ -52,8 +52,8 @@ const es = {
   'stack.lead':
     'Lo que uso para construir y experimentar, agrupado por área. Cada proyecto pide lo que necesita, por eso la lista es amplia a propósito.',
   'stack.areas': 'Áreas de trabajo',
-  'area.frontend': 'Frontend',
-  'area.backend': 'Backend',
+  'area.frontend': 'Interfaz',
+  'area.backend': 'Servidor',
   'area.databases': 'Bases de datos',
   'area.security': 'Seguridad',
   'area.games': 'Desarrollo de juegos',
@@ -64,29 +64,18 @@ const es = {
 
   'projects.title': 'Proyectos',
   'projects.lead':
-    'Cuatro trabajos que muestran cómo pienso y qué puedo entregar. Cada uno tiene una página con contexto, funciones confirmadas y estado actual.',
+    'Cuatro trabajos que muestran cómo pienso y qué puedo crear. Cada uno tiene una página con su contexto y sus funciones confirmadas.',
   'projects.view': 'Ver proyecto',
-  'projects.individual': 'Proyecto individual',
 
-  'status.inProgress': 'En desarrollo',
-  'status.planning': 'En planificación',
-  'status.pending': 'Estado por confirmar',
-  'status.notSpecified': 'Estado no indicado',
 
-  'project.back': 'Volver a los proyectos',
-  'project.summary': 'Resumen',
-  'project.context': 'Contexto',
   'project.features': 'Funciones confirmadas',
+  'project.context': 'Contexto',
+  'project.back': 'Volver a los proyectos',
   'project.tech': 'Tecnologías',
-  'project.status': 'Estado actual',
   'project.repo': 'Repositorio',
   'project.demo': 'Demostración',
   'project.images': 'Imágenes',
-  'project.links': 'Enlaces e imágenes',
-  'project.pending': 'Por añadir',
-  'project.techPending': 'Tecnologías por confirmar',
-  'project.stateNote': 'El estado de este proyecto aún no se ha confirmado. Se actualizará antes de la publicación.',
-  'project.notSpecifiedNote': 'Este proyecto aún no tiene un estado indicado.',
+  'project.links': 'Enlaces del proyecto',
 
   'project.blog.title': 'Blog con PHP y SQL',
   'project.blog.summary': 'Un blog donde cada autor gestiona solo sus propios artículos.',
@@ -94,26 +83,29 @@ const es = {
   'project.blog.feature1': 'Publicar, editar y eliminar artículos',
   'project.blog.feature2': 'Solo el autor de cada artículo puede editar o eliminar su contenido',
 
-  'project.shop.title': 'Tienda de hardware con chatbot',
-  'project.shop.summary': 'Tienda online de hardware con chatbot, seguimiento de pedidos y moneda y pagos adaptados al país.',
-  'project.shop.context': 'Proyecto individual de tienda online de hardware. Tiene chatbot y seguimiento de pedidos, y la moneda y los métodos de pago se adaptan al país del usuario.',
-  'project.shop.feature1': 'Chatbot integrado en la tienda',
+  'project.shop.title': 'Tienda de componentes informáticos con asistente virtual',
+  'project.shop.summary':
+    'Tienda online de componentes informáticos con asistente virtual, seguimiento de pedidos y moneda y pagos adaptados al país.',
+  'project.shop.context':
+    'Proyecto individual de tienda online de componentes informáticos. Incluye un asistente virtual y seguimiento de pedidos; la moneda y los métodos de pago se adaptan al país del usuario.',
+  'project.shop.feature1': 'Asistente virtual integrado en la tienda',
   'project.shop.feature2': 'Seguimiento de pedidos',
   'project.shop.feature3': 'Moneda y métodos de pago adaptados al país del usuario',
 
-  'project.unity.title': 'RPG 2D top-down en Unity',
+  'project.unity.title': 'RPG 2D con vista cenital en Unity',
   'project.unity.summary':
-    'RPG 2D top-down centrado en la magia, con una lore desarrollada y un sistema mágico coherente.',
-  'project.unity.context': 'Juego en desarrollo. La magia está en el centro: el sistema mágico es complejo y está pensado para mantenerse coherente con la lore.',
+    'RPG 2D centrado en la magia, con un universo narrativo bien desarrollado y un sistema mágico coherente.',
+  'project.unity.context':
+    'La magia es el eje central del juego: su sistema mágico es complejo y está pensado para mantener la coherencia con el universo del juego.',
   'project.unity.feature1': 'Sistema mágico complejo y coherente',
-  'project.unity.feature2': 'Lore desarrollada',
-  'project.unity.feature3': 'Vista top-down en 2D',
+  'project.unity.feature2': 'Universo narrativo desarrollado',
+  'project.unity.feature3': 'Vista cenital en 2D',
 
   'project.cpp.title': 'RPG 2D en C++ puro',
-  'project.cpp.summary': 'RPG 2D escrito en C++, con soporte previsto para Windows, Linux y macOS.',
-  'project.cpp.context': 'Proyecto individual en desarrollo, escrito en C++ puro. El trabajo usa bibliotecas y herramientas de apoyo, y no lo oculta.',
+  'project.cpp.summary': 'RPG 2D escrito en C++.',
+  'project.cpp.context':
+    'Proyecto individual escrito en C++ puro. Utiliza bibliotecas y herramientas de apoyo, y se indica con transparencia.',
   'project.cpp.feature1': 'RPG 2D en C++ puro',
-  'project.cpp.feature2': 'Soporte previsto para Windows, Linux y macOS',
 
   'path.title': 'Trayectoria',
   'path.lead': 'Formación y prácticas junto a proyectos propios.',
@@ -129,42 +121,38 @@ const es = {
   'cv.title': 'Currículum',
   'cv.lead': 'Currículum en PDF para descargar.',
   'cv.button': 'Descargar PDF',
-  'cv.pending': 'El archivo aún no se ha añadido:',
 
   'contact.title': 'Contacto',
   'contact.lead':
     'Para hablar de un proyecto web o para ver si tiene sentido trabajar juntos.',
   'contact.direct': 'Directo',
-  'contact.directNote': 'Respondo por email o WhatsApp. En GitHub está el código que sea público.',
-  'contact.form': 'Formulario',
-  'contact.formNote': 'Nombre, email y mensaje. Nada más.',
-  'contact.email': 'Email',
+
+  'contact.form': 'Formulario de contacto',
+  'contact.formNote': 'Nombre, correo electrónico y mensaje. Nada más.',
+  'contact.email': 'Correo electrónico',
   'contact.github': 'GitHub',
   'contact.whatsapp': 'WhatsApp',
 
   'form.name': 'Nombre',
-  'form.email': 'Email',
+  'form.email': 'Correo electrónico',
   'form.message': 'Mensaje',
   'form.namePh': 'Tu nombre',
-  'form.emailPh': 'nombre@ejemplo.com',
   'form.messagePh': 'Qué necesitas, para cuándo y qué existe ya.',
   'form.submit': 'Enviar mensaje',
   'form.sending': 'Enviando…',
   'form.success': 'Mensaje enviado. Responderé lo antes posible.',
-  'form.error': 'No se pudo enviar. Inténtalo de nuevo o usa el email directo.',
+  'form.error': 'No se pudo enviar el mensaje. Inténtalo de nuevo más tarde.',
   'form.required': 'Rellena este campo.',
-  'form.invalidEmail': 'Indica un email válido.',
-  'form.unconfigured':
-    'El envío del formulario aún no está configurado. Usa el email directo mientras no se conecte.',
-  'form.noscript': 'El formulario necesita JavaScript. Sin él, usa el email directo.',
+  'form.invalidEmail': 'Introduce una dirección de correo electrónico válida.',
+  'form.noscript': 'Activa JavaScript para enviar este formulario.',
   'form.privacy': 'Política de privacidad',
 
   'footer.nav': 'Navegación',
   'footer.legal': 'Legal',
   'footer.privacy': 'Privacidad',
   'footer.language': 'Idioma',
-  'footer.theme': 'Tema',
   'footer.note': 'Disponible para proyectos web en remoto.',
+
 
   'theme.label': 'Tema',
   'theme.system': 'Sistema',
@@ -173,31 +161,30 @@ const es = {
 
   'consent.title': 'Analítica sin cookies',
   'consent.body':
-    'Uso Vercel Web Analytics para saber qué páginas se visitan, sin cookies y sin identificar a nadie. El script solo se carga si aceptas.',
+    'Con tu consentimiento, la analítica de visitas permite saber qué páginas se consultan. El script solo se carga después de que aceptes.',
   'consent.accept': 'Aceptar analítica',
   'consent.reject': 'Rechazar',
   'consent.settings': 'Preferencias de analítica',
 
-  'privacy.updated': 'Última actualización: [FECHA DE ACTUALIZACIÓN]',
+  'privacy.updated': 'Configuración actual',
   'privacy.intro':
-    'Esta página explica qué datos recoge este sitio, para qué sirven, durante cuánto tiempo se conservan y cómo puedes ejercer tus derechos. Los campos entre corchetes son datos que aún faltan por completar.',
+    'Esta página resume las funciones de privacidad que están activas actualmente en este sitio.',
   'privacy.form.title': 'Formulario de contacto',
   'privacy.form.body':
-    'El formulario solo pide nombre, email y mensaje. Los datos se envían a través de [PROVEEDOR DEL FORMULARIO] a [EMAIL DE CONTACTO] y sirven únicamente para responder al contacto. La base legal es tu solicitud de contacto; la conservación está prevista durante [PLAZO DE CONSERVACIÓN].',
+    'El formulario de contacto no está disponible y no se muestra. Este sitio no envía ni recopila mensajes mediante el formulario.',
   'privacy.analytics.title': 'Analítica',
   'privacy.analytics.body':
-    'Con tu consentimiento, uso [PROVEEDOR Y CONFIGURACIÓN DE ANALÍTICA] para contar visitas y entender qué páginas son útiles, sin cookies y sin identificar a los visitantes. El script solo se carga después de que aceptes; si rechazas, no se mide nada.',
-  'privacy.storage.title': 'Servicios externos y almacenamiento local',
+    'La analítica de visitas está desactivada. Este sitio no carga scripts de analítica ni envía eventos de uso.',
+  'privacy.storage.title': 'Preferencias del navegador',
   'privacy.storage.body':
-    'El sitio está alojado en [ALOJAMIENTO / PROVEEDOR]. Tus preferencias de idioma y tema se guardan solo en tu navegador (localStorage), igual que tu elección sobre la analítica. No uso cookies publicitarias ni rastreadores de terceros.',
-  'privacy.retention.title': 'Conservación',
+    'Las preferencias de idioma y tema se guardan en tu navegador para conservarse entre visitas. Puedes borrarlas desde la configuración del navegador.',
+  'privacy.retention.title': 'Preferencias guardadas',
   'privacy.retention.body':
-    'Los mensajes recibidos se conservan durante [PLAZO DE CONSERVACIÓN] y después se eliminan. Puedes pedir su eliminación antes de ese plazo.',
-  'privacy.rights.title': 'Derechos y contacto',
+    'Este sitio solo guarda en este navegador las preferencias de idioma y tema. No guarda mensajes de contacto ni datos de analítica.',
+  'privacy.rights.title': 'Tus opciones',
   'privacy.rights.body':
-    'Puedes solicitar el acceso, la rectificación o la supresión de tus datos, o retirar el consentimiento de analítica en cualquier momento, escribiendo a [EMAIL DE CONTACTO]. El responsable del tratamiento es [NOMBRE DEL RESPONSABLE].',
-  'privacy.note':
-    'Este texto describe la configuración real del sitio. Si cambian el formulario o la analítica, esta página debe actualizarse.',
+    'Puedes borrar estas preferencias cuando quieras eliminando los datos de este sitio desde la configuración del navegador. Este sitio no envía ni guarda mensajes.',
+  'privacy.note': 'Este sitio no utiliza cookies publicitarias ni rastreadores publicitarios de terceros.',
   'privacy.back': 'Volver al inicio',
 
   'notFound.title': 'Página no encontrada',

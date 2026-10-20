@@ -5,9 +5,9 @@
 const ja = {
   'site.name': 'ポートフォリオ',
 
-  'meta.home.title': 'フリーランスWeb開発者 — サイト、インターフェース、オンラインストア',
+  'meta.home.title': 'フリーランスのウェブ開発者 — サイト、インターフェース、オンラインストア',
   'meta.home.description':
-    '情報システムの管理とプログラミングを学ぶ学生。Inova Digitalでインターン中。リモートでWebサイト、インターフェース、オンラインストアを制作します。',
+    '情報システムの管理とプログラミングを学ぶ学生。Inova Digitalでインターン中。リモートでウェブサイト、インターフェース、オンラインストアを制作します。',
   'meta.privacy.title': 'プライバシー',
   'meta.privacy.description':
     'このサイトが収集するデータ、目的、保存期間、そして管理方法について説明します。',
@@ -20,10 +20,10 @@ const ja = {
 
   'a11y.skip': 'コンテンツへスキップ',
   'a11y.mainNav': 'メインナビゲーション',
-  'a11y.footerNav': 'フッターナビゲーション',
-  'a11y.language': '言語',
-  'a11y.theme': 'テーマ',
   'a11y.menu': 'メニュー',
+  'a11y.language': '言語',
+
+
   'a11y.close': '閉じる',
   'a11y.external': '新しいウィンドウで開きます',
 
@@ -33,11 +33,11 @@ const ja = {
   'eyebrow.contact': '話しましょう',
 
   'hero.badge': 'リモート案件を受付中',
-  'hero.title': '細部まで丁寧に作る、Webサイト・インターフェース・オンラインストア。',
+  'hero.title': '細部まで丁寧に作る、ウェブサイト・インターフェース・オンラインストア。',
   'hero.lead':
     '情報システムの管理とプログラミングを学びながら、Inova Digitalでインターンをしています。約1年の実践 — 学業、個人プロジェクト、インターン — で、ブログ、ハードウェアストア、2本のRPGを作りました。仕事はリモートのみです。',
   'hero.cta.projects': 'プロジェクトを見る',
-  'hero.cta.contact': 'Webプロジェクトを相談する',
+  'hero.cta.contact': 'ウェブサイト制作の相談をする',
   'hero.panel.title': '概要',
   'hero.panel.study': '学習',
   'hero.panel.course': '情報システムの管理とプログラミング',
@@ -52,41 +52,29 @@ const ja = {
   'stack.lead':
     '制作と実験に使うものを分野ごとにまとめました。各プロジェクトで必要なものを使うため、リストは意図的に広くしています。',
   'stack.areas': '担当領域',
-  'area.frontend': 'フロントエンド',
-  'area.backend': 'バックエンド',
+  'area.frontend': '画面側',
+  'area.backend': 'サーバー側',
   'area.databases': 'データベース',
   'area.security': 'セキュリティ',
   'area.games': 'ゲーム開発',
 
-  'stack.web': 'Webとプログラミング',
+  'stack.web': 'ウェブサイト制作とプログラミング',
   'stack.games': 'ゲームとツール',
   'stack.note': 'レベル・星・パーセントはありません。実際に使ったツールだけを載せています。',
 
   'projects.title': 'プロジェクト',
-  'projects.lead':
-    '考え方と提供できるものを示す4つの仕事です。それぞれに背景、確認済みの機能、現在の状態をまとめたページがあります。',
+  'projects.lead': '考え方と作れるものを示す4つの制作物です。それぞれのページでは背景と確認済みの機能を紹介します。',
   'projects.view': 'プロジェクトを見る',
-  'projects.individual': '個人プロジェクト',
 
-  'status.inProgress': '開発中',
-  'status.planning': '計画中',
-  'status.pending': '状態未確認',
-  'status.notSpecified': '状態未記載',
 
-  'project.back': 'プロジェクト一覧へ',
-  'project.summary': '概要',
-  'project.context': '背景',
   'project.features': '確認済みの機能',
+  'project.context': '背景',
+  'project.back': 'プロジェクト一覧へ',
   'project.tech': '技術',
-  'project.status': '現在の状態',
   'project.repo': 'リポジトリ',
   'project.demo': 'デモ',
   'project.images': '画像',
-  'project.links': 'リンクと画像',
-  'project.pending': '追加予定',
-  'project.techPending': '技術は未確認',
-  'project.stateNote': 'このプロジェクトの状態はまだ確認されていません。公開前に更新します。',
-  'project.notSpecifiedNote': 'このプロジェクトにはまだ状態が記載されていません。',
+  'project.links': 'プロジェクトのリンク',
 
   'project.blog.title': 'PHPとSQLのブログ',
   'project.blog.summary': '各執筆者が自分の記事だけを管理するブログ。',
@@ -101,19 +89,17 @@ const ja = {
   'project.shop.feature2': '注文の追跡',
   'project.shop.feature3': '利用者の国に合わせた通貨と支払い方法',
 
-  'project.unity.title': 'Unityの2DトップダウンRPG',
-  'project.unity.summary':
-    '魔法を中心にした2DトップダウンRPG。作り込んだ世界観と一貫した魔法システムがあります。',
-  'project.unity.context': '開発中のゲームです。魔法が中心にあり、魔法システムは複雑で、世界観と一貫するように設計されています。',
+  'project.unity.title': 'Unityで制作する見下ろし型2D RPG',
+  'project.unity.summary': '魔法を中心にした見下ろし型2D RPG。作り込まれた世界観と一貫した魔法システムが特徴です。',
+  'project.unity.context': '魔法がゲームの中心です。複雑な魔法システムは、ゲームの世界観と一貫するように設計されています。',
   'project.unity.feature1': '複雑で一貫した魔法システム',
   'project.unity.feature2': '作り込まれた世界観',
-  'project.unity.feature3': '2Dトップダウン視点',
+  'project.unity.feature3': '2Dの見下ろし視点',
 
   'project.cpp.title': '純粋なC++による2D RPG',
-  'project.cpp.summary': 'C++で書かれた2D RPG。Windows、Linux、macOSへの対応を予定しています。',
-  'project.cpp.context': '開発中の個人プロジェクトで、純粋なC++で書かれています。補助ライブラリとツールを使っており、その点は隠していません。',
+  'project.cpp.summary': 'C++で書かれた2D RPGです。',
+  'project.cpp.context': '純粋なC++で書かれた個人プロジェクトです。補助ライブラリやツールを使用しており、その点も明記しています。',
   'project.cpp.feature1': '純粋なC++による2D RPG',
-  'project.cpp.feature2': 'Windows、Linux、macOSへの対応を予定',
 
   'path.title': '経歴',
   'path.lead': '学びとインターンを、個人プロジェクトと並行して。',
@@ -128,40 +114,37 @@ const ja = {
   'cv.title': '履歴書',
   'cv.lead': 'ダウンロードできるPDFの履歴書。',
   'cv.button': 'PDFをダウンロード',
-  'cv.pending': 'ファイルはまだ追加されていません：',
 
   'contact.title': 'お問い合わせ',
-  'contact.lead': 'Webプロジェクトについて話すため、または一緒に進める意味があるかを確かめるために。',
+  'contact.lead': 'ウェブサイト制作について相談したり、一緒に進める価値があるかを確かめたりするために。',
   'contact.direct': '直接',
-  'contact.directNote': 'メールまたはWhatsAppで返信します。GitHubには公開中のコードがあります。',
-  'contact.form': 'フォーム',
-  'contact.formNote': '名前、メール、メッセージのみ。',
-  'contact.email': 'メール',
+  'contact.form': 'お問い合わせフォーム',
+
+  'contact.formNote': '名前、メールアドレス、メッセージのみ。',
+  'contact.email': 'メールアドレス',
   'contact.github': 'GitHub',
   'contact.whatsapp': 'WhatsApp',
 
   'form.name': '名前',
-  'form.email': 'メール',
+  'form.email': 'メールアドレス',
   'form.message': 'メッセージ',
   'form.namePh': 'お名前',
-  'form.emailPh': 'name@example.com',
   'form.messagePh': '必要なもの、いつまでに、すでにあるもの。',
   'form.submit': 'メッセージを送る',
   'form.sending': '送信中…',
   'form.success': 'メッセージを送信しました。できるだけ早く返信します。',
-  'form.error': '送信できませんでした。もう一度試すか、直接メールしてください。',
+  'form.error': 'メッセージを送信できませんでした。時間をおいて再度お試しください。',
   'form.required': 'この項目を入力してください。',
   'form.invalidEmail': '有効なメールアドレスを入力してください。',
-  'form.unconfigured': 'フォーム送信はまだ設定されていません。接続されるまで直接メールしてください。',
-  'form.noscript': 'フォームにはJavaScriptが必要です。無効な場合は直接メールしてください。',
+  'form.noscript': 'このフォームを送信するにはJavaScriptを有効にしてください。',
   'form.privacy': 'プライバシーポリシー',
 
   'footer.nav': 'ナビゲーション',
   'footer.legal': '法的事項',
   'footer.privacy': 'プライバシー',
   'footer.language': '言語',
-  'footer.theme': 'テーマ',
-  'footer.note': 'リモートのWebプロジェクトを受付中。',
+  'footer.note': 'リモートのウェブサイト制作プロジェクトを受付中。',
+
 
   'theme.label': 'テーマ',
   'theme.system': 'システム',
@@ -169,32 +152,24 @@ const ja = {
   'theme.dark': 'ダーク',
 
   'consent.title': 'Cookieを使わないアクセス解析',
-  'consent.body':
-    'Vercel Web Analyticsを使い、どのページが見られたかをCookieなしで、個人を特定せずに把握します。スクリプトは同意した場合のみ読み込みます。',
+  'consent.body': '同意した場合に限り、閲覧されたページを把握するための解析スクリプトを読み込みます。',
   'consent.accept': '解析を許可',
   'consent.reject': '拒否',
   'consent.settings': '解析の設定',
 
-  'privacy.updated': '最終更新：[更新日]',
-  'privacy.intro':
-    'このページでは、サイトが収集するデータ、目的、保存期間、権利の行使方法を説明します。角括弧内の項目はまだ記入が必要です。',
+  'privacy.updated': '現在の設定',
+  'privacy.intro': 'このページでは、現在このサイトで有効になっているプライバシー関連の機能を説明します。',
   'privacy.form.title': 'お問い合わせフォーム',
-  'privacy.form.body':
-    'フォームで求めるのは名前、メール、メッセージだけです。データは[フォーム提供者]を通じて[連絡先メール]に送られ、返信のためだけに使います。法的根拠はお問い合わせであり、保存期間は[保存期間]です。',
+  'privacy.form.body': 'お問い合わせフォームは現在利用できないため表示されません。このサイトからフォームを通じてメッセージが送信・収集されることはありません。',
   'privacy.analytics.title': 'アクセス解析',
-  'privacy.analytics.body':
-    '同意を得た場合、[解析提供者と設定]を用いて訪問数を数え、どのページが役立つかをCookieなしで、訪問者を特定せずに把握します。スクリプトは同意後にのみ読み込みます。拒否した場合は何も測定しません。',
-  'privacy.storage.title': '外部サービスとローカル保存',
-  'privacy.storage.body':
-    'サイトは[ホスティング事業者]で公開しています。言語とテーマの設定はブラウザ内（localStorage）にのみ保存され、解析の選択も同様です。広告Cookieや第三者トラッカーは使いません。',
-  'privacy.retention.title': '保存',
-  'privacy.retention.body':
-    '受け取ったメッセージは[保存期間]保存した後に削除します。それより早い削除を求めることもできます。',
-  'privacy.rights.title': '権利と連絡先',
-  'privacy.rights.body':
-    'データの開示、訂正、削除、または解析への同意の撤回は、[連絡先メール]への連絡でいつでも行えます。データ管理者は[管理者名]です。',
-  'privacy.note':
-    'この文章はサイトの実際の設定を説明しています。フォームや解析を変更した場合は、このページを更新する必要があります。',
+  'privacy.analytics.body': 'アクセス解析は現在無効です。このサイトは解析用スクリプトを読み込まず、利用状況のイベントも送信しません。',
+  'privacy.storage.title': 'ブラウザーの設定',
+  'privacy.storage.body': '言語とテーマの設定は、次回の訪問でも使えるようブラウザーに保存されます。ブラウザーの設定から削除できます。',
+  'privacy.retention.title': '保存される設定',
+  'privacy.retention.body': 'このサイトがこのブラウザーに保存するのは、言語とテーマの設定だけです。問い合わせメッセージや解析データは保存しません。',
+  'privacy.rights.title': '設定の管理',
+  'privacy.rights.body': 'ブラウザーの設定でこのサイトのデータを消去すれば、保存された設定をいつでも削除できます。このサイトはメッセージを送信・保存しません。',
+  'privacy.note': 'このサイトでは、広告用Cookieや第三者の広告トラッカーを使用しません。',
   'privacy.back': 'ホームへ戻る',
 
   'notFound.title': 'ページが見つかりません',

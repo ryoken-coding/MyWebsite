@@ -3,7 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ConsentBanner from '../components/ConsentBanner.astro';
-import { getDictionary, localePath } from '../i18n';
+import { createTranslator, localePath } from '../i18n';
 import { getLocaleMeta, locales } from '../i18n/locales';
 import { siteUrl } from '../data/site';
 
@@ -18,6 +18,8 @@ interface Props {
   noindex?: boolean;
   /** The 404 page is language-neutral, so it opts out of hreflang alternates. */
   noAlternates?: boolean;
+  /** Send the language picker to the locale home when this route has no equivalent. */
+  languageFallback?: boolean;
 }
 
 const {
@@ -28,17 +30,19 @@ const {
   pageType = 'website',
   noindex = false,
   noAlternates = false,
+  languageFallback = false,
 } = Astro.props as Props;
 const meta = getLocaleMeta(locale);
-const dict = getDictionary(locale);
-const t = (key: string) => (dict as Record<string, string>)[key] ?? (getDictionary('pt') as Record<string, string>)[key] ?? key;
-const canonical = new URL(localePath(locale, path), siteUrl).toString();
+const t = createTranslator(locale);
+const canonical = siteUrl ? new URL(localePath(locale, path), siteUrl).toString() : undefined;
 
-const alternates = locales.map((l) => ({
-  tag: l.tag,
-  href: new URL(localePath(l.code, path), siteUrl).toString(),
-}));
-const defaultHref = new URL(localePath('pt', path), siteUrl).toString();
+const alternates = siteUrl
+  ? locales.map((item) => ({
+      tag: item.tag,
+      href: new URL(localePath(item.code, path), siteUrl).toString(),
+    }))
+  : [];
+const defaultHref = siteUrl ? new URL(localePath('pt', path), siteUrl).toString() : undefined;
 ---
 <!doctype html>
 <html lang={meta.tag} dir={meta.dir} data-locale={locale}>
@@ -47,18 +51,18 @@ const defaultHref = new URL(localePath('pt', path), siteUrl).toString();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    {!noAlternates && alternates.map((alt) => (
-      <link rel="alternate" hreflang={alt.tag} href={alt.href} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    {!noAlternates && alternates.map((alternate) => (
+      <link rel="alternate" hreflang={alternate.tag} href={alternate.href} />
     ))}
-    {!noAlternates && <link rel="alternate" hreflang="x-default" href={defaultHref} />}
+    {!noAlternates && defaultHref && <link rel="alternate" hreflang="x-default" href={defaultHref} />}
     {noindex && <meta name="robots" content="noindex, follow" />}
 
     <meta property="og:type" content={pageType} />
     <meta property="og:site_name" content={t('site.name')} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
+    {canonical && <meta property="og:url" content={canonical} />}
     <meta property="og:locale" content={meta.tag.replace('-', '_')} />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
@@ -67,7 +71,7 @@ const defaultHref = new URL(localePath('pt', path), siteUrl).toString();
     <meta name="theme-color" content="#f4f7fb" media="(prefers-color-scheme: light)" />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="sitemap" href="/sitemap.xml" />
+    {siteUrl && <link rel="sitemap" href="/sitemap.xml" />}
 
     <script is:inline>
       // Apply the saved theme (or the system preference) before first paint.
@@ -84,7 +88,7 @@ const defaultHref = new URL(localePath('pt', path), siteUrl).toString();
   </head>
   <body id="top">
     <a class="skip-link" href="#main">{t('a11y.skip')}</a>
-    <Header locale={locale} t={t} />
+    <Header locale={locale} t={t} languageFallback={languageFallback} />
     <main id="main" tabindex="-1">
       <slot />
     </main>

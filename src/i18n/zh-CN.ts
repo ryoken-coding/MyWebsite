@@ -19,10 +19,10 @@ const zhCN = {
 
   'a11y.skip': '跳到内容',
   'a11y.mainNav': '主导航',
-  'a11y.footerNav': '页脚导航',
-  'a11y.language': '语言',
-  'a11y.theme': '主题',
   'a11y.menu': '菜单',
+  'a11y.language': '语言',
+
+
   'a11y.close': '关闭',
   'a11y.external': '在新窗口中打开',
 
@@ -61,30 +61,18 @@ const zhCN = {
   'stack.note': '不设等级、星级或百分比：只列出我用过的工具。',
 
   'projects.title': '项目',
-  'projects.lead':
-    '四个作品，展示我的思路和可交付的能力。每个项目都有独立页面，说明背景、已确认的功能和当前状态。',
+  'projects.lead': '四个作品，展示我的思路和能创作的内容。每个项目都有独立页面，介绍其背景和已确认的功能。',
   'projects.view': '查看项目',
-  'projects.individual': '个人项目',
 
-  'status.inProgress': '开发中',
-  'status.planning': '规划中',
-  'status.pending': '状态待确认',
-  'status.notSpecified': '状态未注明',
 
-  'project.back': '返回项目',
-  'project.summary': '概要',
-  'project.context': '背景',
   'project.features': '已确认功能',
+  'project.context': '背景',
+  'project.back': '返回项目',
   'project.tech': '技术',
-  'project.status': '当前状态',
   'project.repo': '代码仓库',
   'project.demo': '演示',
   'project.images': '图片',
-  'project.links': '链接与图片',
-  'project.pending': '待添加',
-  'project.techPending': '技术待确认',
-  'project.stateNote': '该项目状态尚未确认，发布前会更新。',
-  'project.notSpecifiedNote': '该项目尚未注明状态。',
+  'project.links': '项目链接',
 
   'project.blog.title': 'PHP 与 SQL 博客',
   'project.blog.summary': '每位作者只能管理自己文章的博客。',
@@ -101,16 +89,15 @@ const zhCN = {
 
   'project.unity.title': 'Unity 2D 俯视角 RPG',
   'project.unity.summary': '以魔法为核心的 2D 俯视角 RPG，拥有完善的世界观和连贯的魔法系统。',
-  'project.unity.context': '游戏正在开发中。魔法是核心：魔法系统复杂，并且被设计为与世界观保持一致。',
+  'project.unity.context': '魔法是游戏的核心：魔法系统设计复杂，并力求与游戏世界观保持一致。',
   'project.unity.feature1': '复杂且连贯的魔法系统',
   'project.unity.feature2': '完善的世界观',
   'project.unity.feature3': '2D 俯视角画面',
 
   'project.cpp.title': '纯 C++ 的 2D RPG',
-  'project.cpp.summary': '用 C++ 编写的 2D RPG，计划支持 Windows、Linux 和 macOS。',
-  'project.cpp.context': '正在开发的个人项目，使用纯 C++ 编写。项目使用了辅助库和工具，并且不隐瞒这一点。',
+  'project.cpp.summary': '用 C++ 编写的 2D RPG。',
+  'project.cpp.context': '个人项目，使用纯 C++ 编写。项目也使用了辅助库和工具，并对此如实说明。',
   'project.cpp.feature1': '纯 C++ 的 2D RPG',
-  'project.cpp.feature2': '计划支持 Windows、Linux 和 macOS',
 
   'path.title': '经历',
   'path.lead': '学习与实习，与个人项目并行。',
@@ -125,40 +112,37 @@ const zhCN = {
   'cv.title': '简历',
   'cv.lead': '可下载的 PDF 简历。',
   'cv.button': '下载 PDF',
-  'cv.pending': '文件尚未添加：',
 
   'contact.title': '联系',
   'contact.lead': '聊聊一个网页项目——或者看看我们是否适合合作。',
   'contact.direct': '直接联系',
-  'contact.directNote': '我会通过 email 或 WhatsApp 回复。GitHub 上有公开的代码。',
-  'contact.form': '表单',
-  'contact.formNote': '姓名、email 和留言。仅此而已。',
-  'contact.email': 'Email',
+  'contact.form': '联系表单',
+
+  'contact.formNote': '姓名、电子邮箱和留言。仅此而已。',
+  'contact.email': '电子邮箱',
   'contact.github': 'GitHub',
   'contact.whatsapp': 'WhatsApp',
 
   'form.name': '姓名',
-  'form.email': 'Email',
+  'form.email': '电子邮箱',
   'form.message': '留言',
   'form.namePh': '你的姓名',
-  'form.emailPh': 'name@example.com',
   'form.messagePh': '你需要什么、什么时候要，以及目前已有的内容。',
   'form.submit': '发送留言',
   'form.sending': '正在发送…',
   'form.success': '留言已发送。我会尽快回复。',
-  'form.error': '发送失败。请重试或直接使用 email。',
+  'form.error': '消息发送失败，请稍后重试。',
   'form.required': '请填写此栏。',
-  'form.invalidEmail': '请输入有效的 email 地址。',
-  'form.unconfigured': '表单发送尚未配置。在接通之前，请直接使用 email。',
-  'form.noscript': '表单需要 JavaScript。若未启用，请直接使用 email。',
+  'form.invalidEmail': '请输入有效的电子邮箱地址。',
+  'form.noscript': '请启用 JavaScript 后再提交此表单。',
   'form.privacy': '隐私政策',
 
   'footer.nav': '导航',
   'footer.legal': '法律信息',
   'footer.privacy': '隐私',
   'footer.language': '语言',
-  'footer.theme': '主题',
-  'footer.note': '可承接远程网页项目。',
+  'footer.note': '可承接远程网站项目。',
+
 
   'theme.label': '主题',
   'theme.system': '跟随系统',
@@ -166,30 +150,24 @@ const zhCN = {
   'theme.dark': '深色',
 
   'consent.title': '无 Cookie 的访问统计',
-  'consent.body':
-    '我使用 Vercel Web Analytics 了解哪些页面被访问，不使用 Cookie，也不识别个人。只有你同意后才会加载脚本。',
+  'consent.body': '只有在你同意后，访问统计脚本才会加载，用于了解哪些页面受到访问。',
   'consent.accept': '接受统计',
   'consent.reject': '拒绝',
   'consent.settings': '统计偏好设置',
 
-  'privacy.updated': '最后更新：[更新日期]',
-  'privacy.intro':
-    '本页说明网站收集哪些数据、用途、保存期限，以及你如何行使自己的权利。方括号中的字段仍需填写。',
+  'privacy.updated': '当前设置',
+  'privacy.intro': '本页概述此网站目前启用的隐私相关功能。',
   'privacy.form.title': '联系表单',
-  'privacy.form.body':
-    '表单只要求姓名、email 和留言。数据通过 [表单服务商] 发送至 [联系 email]，仅用于回复你的留言。法律依据是你的联系请求；保存期限为 [保存期限]。',
+  'privacy.form.body': '联系表单目前不可用，因此不会显示。此网站不会通过该表单发送或收集留言。',
   'privacy.analytics.title': '访问统计',
-  'privacy.analytics.body':
-    '在你同意后，我使用 [统计服务商与配置] 统计访问量并了解哪些页面有用，不使用 Cookie，也不识别访客。脚本仅在你接受后加载；若拒绝，则不会进行任何统计。',
-  'privacy.storage.title': '外部服务与本地存储',
-  'privacy.storage.body':
-    '网站托管于 [托管服务商]。语言和主题偏好仅保存在你的浏览器中（localStorage），统计选择也是如此。我不使用广告 Cookie 或第三方跟踪器。',
-  'privacy.retention.title': '保存',
-  'privacy.retention.body': '收到的留言保存 [保存期限]，之后删除。你可以提前要求删除。',
-  'privacy.rights.title': '权利与联系',
-  'privacy.rights.body':
-    '你可以随时要求访问、更正或删除你的数据，或撤回对统计的同意，请写信至 [联系 email]。数据控制者为 [负责人姓名]。',
-  'privacy.note': '本说明描述网站的实际配置。如果表单或统计方式发生变化，本页必须更新。',
+  'privacy.analytics.body': '访问统计目前已关闭。此网站不会加载统计脚本，也不会发送使用情况事件。',
+  'privacy.storage.title': '浏览器偏好设置',
+  'privacy.storage.body': '语言和主题偏好会保存在你的浏览器中，以便下次访问时继续使用。你可以在浏览器设置中清除这些数据。',
+  'privacy.retention.title': '保存的偏好设置',
+  'privacy.retention.body': '此网站只在当前浏览器中保存语言和主题偏好，不会保存联系留言或访问统计数据。',
+  'privacy.rights.title': '你的选择',
+  'privacy.rights.body': '你可以随时在浏览器设置中清除此网站的数据，以删除这些偏好设置。此网站不会发送或保存留言。',
+  'privacy.note': '此网站不使用广告 Cookie 或第三方广告跟踪器。',
   'privacy.back': '返回首页',
 
   'notFound.title': '页面未找到',

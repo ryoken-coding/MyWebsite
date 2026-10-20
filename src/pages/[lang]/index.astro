@@ -3,47 +3,42 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import ContactForm from '../../components/ContactForm.astro';
 import Icon from '../../components/Icon.astro';
-import { getDictionary } from '../../i18n';
+import IsolatedText from '../../components/IsolatedText.astro';
+import { createTranslator } from '../../i18n';
 import { locales } from '../../i18n/locales';
 import { projects } from '../../data/projects';
 import { stack } from '../../data/stack';
-import { contact, contactPlaceholders, cv } from '../../data/site';
+import { contact, cv, formEndpoint } from '../../data/site';
 
 export function getStaticPaths() {
   return locales.map((locale) => ({ params: { lang: locale.code } }));
 }
 
 const { lang } = Astro.params;
-const locale = lang ?? 'pt';
-const dict = getDictionary(locale);
-const t = (key: string) => (dict as Record<string, string>)[key] ?? key;
-
+if (!lang) throw new Error('Missing locale route parameter');
+const locale = lang;
+const t = createTranslator(locale);
 const directLinks = [
   {
     label: 'contact.email',
     value: contact.email,
-    placeholder: contactPlaceholders.email,
     href: contact.email ? `mailto:${contact.email}` : '',
-    icon: 'mail',
     external: false,
   },
   {
     label: 'contact.github',
     value: contact.github,
-    placeholder: contactPlaceholders.github,
     href: contact.github,
-    icon: 'github',
     external: true,
   },
   {
     label: 'contact.whatsapp',
     value: contact.whatsapp,
-    placeholder: contactPlaceholders.whatsapp,
     href: contact.whatsapp,
-    icon: 'whatsapp',
     external: true,
   },
-];
+].filter((item) => Boolean(item.value && item.href));
+const hasContact = Boolean(directLinks.length || formEndpoint);
 ---
 <BaseLayout
   locale={locale}
@@ -56,10 +51,10 @@ const directLinks = [
       <div>
         <p class="hero-badge"><span class="dot" aria-hidden="true"></span>{t('hero.badge')}</p>
         <h1>{t('hero.title')}</h1>
-        <p class="lead">{t('hero.lead')}</p>
+        <p class="lead"><IsolatedText locale={locale} text={t('hero.lead')} /></p>
         <div class="hero-actions">
           <a class="btn btn--primary" href="#projects">{t('hero.cta.projects')}<span class="arrow" aria-hidden="true">→</span></a>
-          <a class="btn btn--ghost" href="#contact">{t('hero.cta.contact')}</a>
+          {hasContact && <a class="btn btn--ghost" href="#contact">{t('hero.cta.contact')}</a>}
         </div>
       </div>
 
@@ -71,19 +66,19 @@ const directLinks = [
         <dl class="panel-list">
           <div class="panel-row">
             <dt>{t('hero.panel.study')}</dt>
-            <dd>{t('hero.panel.course')}</dd>
+            <dd><IsolatedText locale={locale} text={t('hero.panel.course')} /></dd>
           </div>
           <div class="panel-row">
             <dt>{t('hero.panel.intern')}</dt>
-            <dd>{t('hero.panel.internship')}</dd>
+            <dd><IsolatedText locale={locale} text={t('hero.panel.internship')} /></dd>
           </div>
           <div class="panel-row">
             <dt>{t('hero.panel.practice')}</dt>
-            <dd>{t('hero.panel.practiceValue')}</dd>
+            <dd><IsolatedText locale={locale} text={t('hero.panel.practiceValue')} /></dd>
           </div>
           <div class="panel-row">
             <dt>{t('hero.panel.availability')}</dt>
-            <dd class="accent">{t('hero.panel.remote')}</dd>
+            <dd class="accent"><IsolatedText locale={locale} text={t('hero.panel.remote')} /></dd>
           </div>
         </dl>
       </aside>
@@ -113,7 +108,7 @@ const directLinks = [
               {t(group.groupKey)}
             </h3>
             <ul class="chips">
-              {group.items.map((item) => <li class="chip">{item}</li>)}
+              {group.items.map((item) => <li class="chip"><bdi dir="ltr">{item}</bdi></li>)}
             </ul>
           </article>
         ))}
@@ -150,80 +145,72 @@ const directLinks = [
       <div class="path-list">
         <article class="path-item">
           <span class="num" aria-hidden="true">01</span>
-          <h3>{t('path.edu.title')}</h3>
-          <p>{t('path.edu.body')}</p>
+          <h3><IsolatedText locale={locale} text={t('path.edu.title')} /></h3>
+          <p><IsolatedText locale={locale} text={t('path.edu.body')} /></p>
         </article>
         <article class="path-item">
           <span class="num" aria-hidden="true">02</span>
-          <h3>{t('path.intern.title')}</h3>
-          <p>{t('path.intern.body')}</p>
+          <h3><IsolatedText locale={locale} text={t('path.intern.title')} /></h3>
+          <p><IsolatedText locale={locale} text={t('path.intern.body')} /></p>
         </article>
         <article class="path-item">
           <span class="num" aria-hidden="true">03</span>
-          <h3>{t('path.practice.title')}</h3>
-          <p>{t('path.practice.body')}</p>
+          <h3><IsolatedText locale={locale} text={t('path.practice.title')} /></h3>
+          <p><IsolatedText locale={locale} text={t('path.practice.body')} /></p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section" id="cv" aria-labelledby="cv-title">
-    <div class="container">
-      <div class="cv-band">
-        <div>
-          <h2 id="cv-title">{t('cv.title')}</h2>
-          <p>{t('cv.lead')}</p>
-        </div>
-        <div class="cv-actions">
-          {cv.file ? (
+  {cv.file && (
+    <section class="section" id="cv" aria-labelledby="cv-title">
+      <div class="container">
+        <div class="cv-band">
+          <div>
+            <h2 id="cv-title">{t('cv.title')}</h2>
+            <p>{t('cv.lead')}</p>
+          </div>
+          <div class="cv-actions">
             <a class="btn btn--primary" href={cv.file} download>
               <Icon name="download" size={16} />{t('cv.button')}
             </a>
-          ) : (
-            <>
-              <span class="btn btn--ghost btn--disabled" aria-disabled="true">
-                <Icon name="download" size={16} />{t('cv.button')}
-              </span>
-              <p class="cv-pending">{t('cv.pending')} {cv.placeholder}</p>
-            </>
-          )}
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
-  <section class="section" id="contact" aria-labelledby="contact-title">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">{t('eyebrow.contact')}</p>
-        <h2 id="contact-title">{t('contact.title')}</h2>
-        <p class="lead">{t('contact.lead')}</p>
-      </div>
-      <div class="contact-grid">
-        <div>
-          <h3>{t('contact.direct')}</h3>
-          <ul class="direct-list">
-            {directLinks.map((item) => (
-              <li class="direct-row">
-                <span class="label">{t(item.label)}</span>
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  >
-                    {item.value}
-                    {item.external && <span class="sr-only"> ({t('a11y.external')})</span>}
-                  </a>
-                ) : (
-                  <span class="placeholder">{item.placeholder}</span>
-                )}
-              </li>
-            ))}
-          </ul>
-          <p class="direct-note">{t('contact.directNote')}</p>
+  {hasContact && (
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">{t('eyebrow.contact')}</p>
+          <h2 id="contact-title">{t('contact.title')}</h2>
+          <p class="lead">{t('contact.lead')}</p>
         </div>
-        <ContactForm locale={locale} t={t} />
+        <div class:list={['contact-grid', { 'contact-grid--single': !(directLinks.length && formEndpoint) }]}>
+          {directLinks.length > 0 && (
+            <div>
+              <h3>{t('contact.direct')}</h3>
+              <ul class="direct-list">
+                {directLinks.map((item) => (
+                  <li class="direct-row">
+                    <span class="label">{t(item.label)}</span>
+                    <a
+                      href={item.href}
+                      {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    >
+                      <bdi dir="ltr">{item.value}</bdi>
+                      {item.external && <span class="sr-only"> ({t('a11y.external')})</span>}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {formEndpoint && <ContactForm locale={locale} t={t} />}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 </BaseLayout>

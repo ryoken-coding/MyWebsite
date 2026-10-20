@@ -19,10 +19,10 @@ const zhTW = {
 
   'a11y.skip': '跳至內容',
   'a11y.mainNav': '主導覽',
-  'a11y.footerNav': '頁尾導覽',
-  'a11y.language': '語言',
-  'a11y.theme': '主題',
   'a11y.menu': '選單',
+  'a11y.language': '語言',
+
+
   'a11y.close': '關閉',
   'a11y.external': '在新視窗中開啟',
 
@@ -61,30 +61,18 @@ const zhTW = {
   'stack.note': '不設等級、星等或百分比：只列出我用過的工具。',
 
   'projects.title': '專案',
-  'projects.lead':
-    '四個作品，呈現我的思路與可交付的能力。每個專案都有獨立頁面，說明背景、已確認的功能與目前狀態。',
+  'projects.lead': '四個作品，呈現我的思路與能創作的內容。每個專案都有獨立頁面，介紹其背景與已確認的功能。',
   'projects.view': '查看專案',
-  'projects.individual': '個人專案',
 
-  'status.inProgress': '開發中',
-  'status.planning': '規劃中',
-  'status.pending': '狀態待確認',
-  'status.notSpecified': '狀態未註明',
 
-  'project.back': '返回專案',
-  'project.summary': '概要',
-  'project.context': '背景',
   'project.features': '已確認功能',
+  'project.context': '背景',
+  'project.back': '返回專案',
   'project.tech': '技術',
-  'project.status': '目前狀態',
   'project.repo': '程式碼倉庫',
   'project.demo': '展示',
   'project.images': '圖片',
-  'project.links': '連結與圖片',
-  'project.pending': '待新增',
-  'project.techPending': '技術待確認',
-  'project.stateNote': '此專案的狀態尚未確認，發布前會更新。',
-  'project.notSpecifiedNote': '此專案尚未註明狀態。',
+  'project.links': '專案連結',
 
   'project.blog.title': 'PHP 與 SQL 部落格',
   'project.blog.summary': '每位作者只能管理自己文章的部落格。',
@@ -101,16 +89,15 @@ const zhTW = {
 
   'project.unity.title': 'Unity 2D 俯視角 RPG',
   'project.unity.summary': '以魔法為核心的 2D 俯視角 RPG，擁有完整世界觀與連貫的魔法系統。',
-  'project.unity.context': '遊戲開發中。魔法是核心：魔法系統複雜，並設計為與世界觀保持一致。',
+  'project.unity.context': '魔法是遊戲的核心：魔法系統設計複雜，並力求與遊戲世界觀保持一致。',
   'project.unity.feature1': '複雜且連貫的魔法系統',
   'project.unity.feature2': '完整的世界觀',
   'project.unity.feature3': '2D 俯視角畫面',
 
   'project.cpp.title': '純 C++ 的 2D RPG',
-  'project.cpp.summary': '以 C++ 撰寫的 2D RPG，預計支援 Windows、Linux 與 macOS。',
-  'project.cpp.context': '開發中的個人專案，以純 C++ 撰寫。專案使用了輔助函式庫與工具，並不隱瞞這一點。',
+  'project.cpp.summary': '以 C++ 撰寫的 2D RPG。',
+  'project.cpp.context': '個人專案，以純 C++ 撰寫。專案也使用輔助函式庫與工具，並如實說明。',
   'project.cpp.feature1': '純 C++ 的 2D RPG',
-  'project.cpp.feature2': '預計支援 Windows、Linux 與 macOS',
 
   'path.title': '經歷',
   'path.lead': '學習與實習，與個人專案並行。',
@@ -125,40 +112,37 @@ const zhTW = {
   'cv.title': '履歷',
   'cv.lead': '可下載的 PDF 履歷。',
   'cv.button': '下載 PDF',
-  'cv.pending': '檔案尚未加入：',
 
   'contact.title': '聯絡',
   'contact.lead': '聊聊一個網頁專案——或看看我們是否適合合作。',
   'contact.direct': '直接聯絡',
-  'contact.directNote': '我會透過 email 或 WhatsApp 回覆。GitHub 上有公開的程式碼。',
-  'contact.form': '表單',
-  'contact.formNote': '姓名、email 與訊息。僅此而已。',
-  'contact.email': 'Email',
+  'contact.form': '聯絡表單',
+
+  'contact.formNote': '姓名、電子郵件與訊息。僅此而已。',
+  'contact.email': '電子郵件',
   'contact.github': 'GitHub',
   'contact.whatsapp': 'WhatsApp',
 
   'form.name': '姓名',
-  'form.email': 'Email',
+  'form.email': '電子郵件',
   'form.message': '訊息',
   'form.namePh': '你的姓名',
-  'form.emailPh': 'name@example.com',
   'form.messagePh': '你需要什麼、什麼時候要，以及目前已有的內容。',
   'form.submit': '送出訊息',
   'form.sending': '傳送中…',
   'form.success': '訊息已送出。我會儘快回覆。',
-  'form.error': '傳送失敗。請重試或直接使用 email。',
+  'form.error': '訊息無法送出，請稍後再試。',
   'form.required': '請填寫此欄位。',
-  'form.invalidEmail': '請輸入有效的 email 位址。',
-  'form.unconfigured': '表單傳送尚未設定。在接通之前，請直接使用 email。',
-  'form.noscript': '表單需要 JavaScript。若未啟用，請直接使用 email。',
+  'form.invalidEmail': '請輸入有效的電子郵件地址。',
+  'form.noscript': '請啟用 JavaScript 後再提交此表單。',
   'form.privacy': '隱私政策',
 
   'footer.nav': '導覽',
   'footer.legal': '法律資訊',
   'footer.privacy': '隱私',
   'footer.language': '語言',
-  'footer.theme': '主題',
-  'footer.note': '可承接遠端網頁專案。',
+  'footer.note': '可承接遠端網站專案。',
+
 
   'theme.label': '主題',
   'theme.system': '跟隨系統',
@@ -166,30 +150,24 @@ const zhTW = {
   'theme.dark': '深色',
 
   'consent.title': '不使用 Cookie 的流量分析',
-  'consent.body':
-    '我使用 Vercel Web Analytics 了解哪些頁面被瀏覽，不使用 Cookie，也不辨識個人。只有你同意後才會載入腳本。',
+  'consent.body': '只有在你同意後，訪客統計指令碼才會載入，用來了解哪些頁面有人瀏覽。',
   'consent.accept': '接受流量分析',
   'consent.reject': '拒絕',
   'consent.settings': '流量分析偏好設定',
 
-  'privacy.updated': '最後更新：[更新日期]',
-  'privacy.intro':
-    '本頁說明網站蒐集哪些資料、用途、保存期限，以及你如何行使自己的權利。方括號中的欄位仍需填寫。',
+  'privacy.updated': '目前設定',
+  'privacy.intro': '本頁概述此網站目前啟用的隱私相關功能。',
   'privacy.form.title': '聯絡表單',
-  'privacy.form.body':
-    '表單只要求姓名、email 與訊息。資料透過 [表單服務商] 傳送至 [聯絡 email]，僅用於回覆你的訊息。法律依據是你的聯絡請求；保存期限為 [保存期限]。',
+  'privacy.form.body': '聯絡表單目前無法使用，因此不會顯示。此網站不會透過該表單傳送或收集訊息。',
   'privacy.analytics.title': '流量分析',
-  'privacy.analytics.body':
-    '在你同意後，我使用 [流量分析服務商與設定] 統計造訪並了解哪些頁面有用，不使用 Cookie，也不辨識訪客。腳本僅在你接受後載入；若拒絕，則不會進行任何統計。',
-  'privacy.storage.title': '外部服務與本機儲存',
-  'privacy.storage.body':
-    '網站託管於 [託管服務商]。語言與主題偏好僅儲存在你的瀏覽器中（localStorage），流量分析選擇也是如此。我不使用廣告 Cookie 或第三方追蹤器。',
-  'privacy.retention.title': '保存',
-  'privacy.retention.body': '收到的訊息保存 [保存期限]，之後刪除。你可以提前要求刪除。',
-  'privacy.rights.title': '權利與聯絡',
-  'privacy.rights.body':
-    '你可以隨時要求查閱、更正或刪除你的資料，或撤回對流量分析的同意，請寫信至 [聯絡 email]。資料控管者為 [負責人姓名]。',
-  'privacy.note': '本說明描述網站的實際設定。如果表單或流量分析方式改變，本頁必須更新。',
+  'privacy.analytics.body': '訪客統計目前已停用。此網站不會載入統計指令碼，也不會傳送使用事件。',
+  'privacy.storage.title': '瀏覽器偏好設定',
+  'privacy.storage.body': '語言與主題偏好會儲存在瀏覽器中，讓你下次造訪時繼續使用。你可以在瀏覽器設定中清除這些資料。',
+  'privacy.retention.title': '儲存的偏好設定',
+  'privacy.retention.body': '此網站只會在目前的瀏覽器中儲存語言與主題偏好，不會儲存聯絡訊息或訪客統計資料。',
+  'privacy.rights.title': '你的選擇',
+  'privacy.rights.body': '你可以隨時在瀏覽器設定中清除此網站的資料，以移除這些偏好設定。此網站不會傳送或儲存訊息。',
+  'privacy.note': '此網站不使用廣告 Cookie 或第三方廣告追蹤器。',
   'privacy.back': '返回首頁',
 
   'notFound.title': '找不到頁面',

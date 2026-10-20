@@ -1,21 +1,24 @@
 ---
 import { localePath } from '../i18n';
 import { locales } from '../i18n/locales';
+import { contact, cv, formEndpoint } from '../data/site';
 import Icon from './Icon.astro';
 
 interface Props {
   locale: string;
   t: (key: string) => string;
+  languageFallback?: boolean;
 }
-const { locale, t } = Astro.props as Props;
+const { locale, t, languageFallback = false } = Astro.props as Props;
 const home = localePath(locale);
+const hasContact = Boolean(contact.email || contact.github || contact.whatsapp || formEndpoint);
 
 const navItems = [
   { key: 'nav.home', href: home },
   { key: 'nav.projects', href: `${home}#projects` },
   { key: 'nav.path', href: `${home}#path` },
-  { key: 'nav.contact', href: `${home}#contact` },
-  { key: 'nav.cv', href: `${home}#cv` },
+  ...(hasContact ? [{ key: 'nav.contact', href: `${home}#contact` }] : []),
+  ...(cv.file ? [{ key: 'nav.cv', href: `${home}#cv` }] : []),
 ];
 ---
 <header class="site-header">
@@ -44,11 +47,12 @@ const navItems = [
           class="lang-select"
           data-lang-select
           data-current={locale}
+          data-fallback-home={languageFallback ? 'true' : 'false'}
           title={t('a11y.language')}
         >
-          {locales.map((l) => (
-            <option value={l.code} selected={l.code === locale} lang={l.tag}>
-              {l.nativeName}
+          {locales.map((item) => (
+            <option value={item.code} selected={item.code === locale} lang={item.tag}>
+              {item.nativeName}
             </option>
           ))}
         </select>

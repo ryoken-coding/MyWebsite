@@ -1,0 +1,14 @@
+---
+interface Props {
+  locale: string;
+  text: string;
+}
+
+const { locale, text } = Astro.props as Props;
+const parts = locale === 'ar'
+  ? text.split(/([A-Za-z0-9][A-Za-z0-9+.#@/_-]*(?:\s+[A-Za-z0-9][A-Za-z0-9+.#@/_-]*)*)/g)
+  : [];
+---
+{locale === 'ar'
+  ? parts.map((part) => /^[A-Za-z0-9]/.test(part) ? <bdi dir="ltr">{part}</bdi> : part)
+  : text}
