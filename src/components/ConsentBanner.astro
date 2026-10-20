@@ -1,0 +1,33 @@
+---
+import { analytics } from '../data/site';
+import { localePath } from '../i18n';
+
+interface Props {
+  t: (key: string) => string;
+  locale: string;
+}
+const { t, locale } = Astro.props as Props;
+---
+{analytics.enabled && (
+  <section
+    class="consent"
+    data-consent
+    role="region"
+    aria-labelledby="consent-title"
+    aria-describedby="consent-body"
+    data-storage-key="analytics-consent"
+    data-script-path={analytics.scriptPath}
+  >
+    <div class="consent-text">
+      <strong id="consent-title">{t('consent.title')}</strong>
+      <p id="consent-body">
+        {t('consent.body')}{' '}
+        <a href={localePath(locale, 'privacy')} data-consent-privacy>{t('footer.privacy')}</a>
+      </p>
+    </div>
+    <div class="consent-actions">
+      <button type="button" class="btn btn--primary" data-consent-accept>{t('consent.accept')}</button>
+      <button type="button" class="btn btn--ghost" data-consent-reject>{t('consent.reject')}</button>
+    </div>
+  </section>
+)}

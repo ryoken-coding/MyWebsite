@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getDictionary, localePath } from '../i18n';
+
+const locale = 'pt';
+const t = (key: string) => (getDictionary(locale) as Record<string, string>)[key] ?? key;
+---
+<BaseLayout
+  locale={locale}
+  title={`${t('notFound.title')} · ${t('site.name')}`}
+  description={t('notFound.body')}
+  noindex
+  noAlternates
+>
+  <div class="container not-found">
+    <p class="mono">404</p>
+    <h1>{t('notFound.title')}</h1>
+    <p class="lead">{t('notFound.body')}</p>
+    <p>
+      <a class="btn btn--primary" href={localePath(locale)}>{t('notFound.cta')}</a>
+    </p>
+  </div>
+</BaseLayout>

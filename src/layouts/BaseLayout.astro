@@ -1,0 +1,95 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
+import { getDictionary, localePath } from '../i18n';
+import { getLocaleMeta, locales } from '../i18n/locales';
+import { siteUrl } from '../data/site';
+
+interface Props {
+  locale: string;
+  /** Route without the language segment, e.g. '' or 'projects/blog'. */
+  path?: string;
+  title: string;
+  description: string;
+  /** Project pages and privacy use the same layout. */
+  pageType?: 'website' | 'article';
+  noindex?: boolean;
+  /** The 404 page is language-neutral, so it opts out of hreflang alternates. */
+  noAlternates?: boolean;
+}
+
+const {
+  locale,
+  path = '',
+  title,
+  description,
+  pageType = 'website',
+  noindex = false,
+  noAlternates = false,
+} = Astro.props as Props;
+const meta = getLocaleMeta(locale);
+const dict = getDictionary(locale);
+const t = (key: string) => (dict as Record<string, string>)[key] ?? (getDictionary('pt') as Record<string, string>)[key] ?? key;
+const canonical = new URL(localePath(locale, path), siteUrl).toString();
+
+const alternates = locales.map((l) => ({
+  tag: l.tag,
+  href: new URL(localePath(l.code, path), siteUrl).toString(),
+}));
+const defaultHref = new URL(localePath('pt', path), siteUrl).toString();
+---
+<!doctype html>
+<html lang={meta.tag} dir={meta.dir} data-locale={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {!noAlternates && alternates.map((alt) => (
+      <link rel="alternate" hreflang={alt.tag} href={alt.href} />
+    ))}
+    {!noAlternates && <link rel="alternate" hreflang="x-default" href={defaultHref} />}
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <meta property="og:type" content={pageType} />
+    <meta property="og:site_name" content={t('site.name')} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={meta.tag.replace('-', '_')} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f4f7fb" media="(prefers-color-scheme: light)" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap.xml" />
+
+    <script is:inline>
+      // Apply the saved theme (or the system preference) before first paint.
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var mode = saved === 'light' || saved === 'dark' || saved === 'system' ? saved : 'system';
+          var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.dataset.themeMode = mode;
+          document.documentElement.dataset.theme = mode === 'system' ? (dark ? 'dark' : 'light') : mode;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main">{t('a11y.skip')}</a>
+    <Header locale={locale} t={t} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer locale={locale} t={t} />
+    <ConsentBanner locale={locale} t={t} />
+    <script is:inline src="/scripts/site.js" defer></script>
+  </body>
+</html>
